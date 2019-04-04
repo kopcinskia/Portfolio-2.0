@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const publicPath = '/dist/build/';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
     //Content
     entry: './index.js',
@@ -19,13 +18,14 @@ module.exports = {
     ],
 
     output: {
-        path: path.join(__dirname, publicPath),
+        path: path.join(__dirname, 'src/public'),
         filename: '[name].bundle.js',
         publicPath: publicPath,
         sourceMapFilename: '[name].map',
     },
 
     devServer: {
+        inline: false,
         port: 3000,
         host: 'localhost',
         //Be possible go back pressing the "back" button at chrome
@@ -33,16 +33,25 @@ module.exports = {
         noInfo: false,
         stats: 'minimal',
         publicPath: publicPath,
-        contentBase: path.join(__dirname, publicPath),
+        contentBase: path.join(__dirname, 'src/public'),
         //hotmodulereplacementeplugin
         hot: true
     },
     module: {
         rules: [
             {
-                test: /\.css$/, use: ['style-loader', 'css-loader'],
-                include: /flexboxgrid/
-                //Follow instructions at https://github.com/roylee0704/react-flexbox-grid
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader" // creates style nodes from JS strings
+                    },
+                    {
+                        loader: "css-loader" // translates CSS into CommonJS
+                    },
+                    {
+                        loader: "sass-loader" // compiles Sass to CSS
+                    },
+                ]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,

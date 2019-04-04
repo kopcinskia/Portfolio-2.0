@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Container from './src/components/container';
+import Nav_top from './src/components/header';
 
 
 ReactDOM.render(
-<Container />,
+        <div>
+            <Container />
+            <Nav_top />
+        </div>,
     document.getElementById('root')
 );
 
