@@ -1,5 +1,5 @@
-import React, from 'react';
-import '../../../header.scss';
+import React from 'react';
+import '../../../main.scss';
 
 const Nav_top = () => {
     return <header>
@@ -16,6 +16,7 @@ const Nav_top = () => {
 
                     </div>
                     <div className="main-menu-content">
+                        <h2>Działa!</h2>
                         <ul id="main-menu">
                             <li><a href="#" lang="pl">Start</a></li>
                             <li><a href="#" lang="pl">Portfolio</a></li>

@@ -1,0 +1,52 @@
+//// Zmienne text
+//$basic-font-size: 13px;
+//$basic-line-height: 24px;
+//$paragraph-margin: 0 0 15px;
+//// Mixin naglowki
+//.header-mixin($header-font-size;
+//$header-margin-bottom;
+//$header-color: $basic-header-color) {
+//  font-size: $header-font-size;
+//  margin-top: 0;
+//  margin-left: 0;
+//  margin-right: 0;
+//  margin-bottom: $header-margin-bottom;
+//  color: $header-color;
+//  font-weight: 400;
+//}
+//
+//// Font family
+//$font-family-primary: 'Open Sans',
+//sans-serif;
+//$font-family-secondary: 'Lato',
+//sans-serif;
+////Style tekstu
+//body {
+//  font-size: $basic-font-size;
+//  font-family: $font-family-primary;
+//  color: $basic-text-color;
+//}
+//h2 {
+//  .header-mixin(36px;
+//  18px);
+//  @media $desktop {
+//  .header-mixin(28px;
+//  18px);
+//}
+//}
+//h3 {
+//@include header-mixin(30px; 16px);
+//  @media $desktop {
+//  .header-mixin(23px;
+//  18px);
+//}
+//}
+//p {
+//  line-height: $basic-line-height;
+//  .header-mixin(24px;
+//  13px);
+//  @media $desktop {
+//  .header-mixin(16px;
+//  18px);
+//}
+//}

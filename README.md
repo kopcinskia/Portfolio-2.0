@@ -1,8 +1,8 @@
-# **Portfolio**
+# **Portfolio 2.0**
 
-## I already created this project and it isn't ended yet
+### I already creating this project and it isn't ended yet
 
-### if you whana check my code Let's do this:
+### if you wanna check my code Let's do this:
 
 open terminal:
 
