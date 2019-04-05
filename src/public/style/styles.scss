@@ -1,113 +1,108 @@
-//@import 'helpers';
-//
-//// MEDIA QUERIES
-//$columns: 12;
-//$column-width: 65;
-//$gutter-width: 30;
-//$total-width: 100%;
-//.our-services .single-col {
-//@include column(12);
-//    @media $phone {
-//    @include column(6);
-//}
-//    @media $tablet {
-//    @include column(3);
-//}
-//}
-//
-//.skills .single-col {
-//@include column(6);
-//    @media $phone {
-//    @include column(3);
-//}
-//    @media $tablet {
-//    @include column(2);
-//}
-//}
-//
-//.advanteges .single-col {
-//@include column(12);
-//    @media $phone {
-//    @include column(6);
-//}
-//    @media $tablet {
-//    @include column(4);
-//}
-//}
-//
-//.statistics .single-col {
-//@include column(12);
-//    @media $phone {
-//    @include column(6);
-//}
-//    @media $tablet {
-//    @include column(3);
-//}
-//}
-//
-//// Container
-//.container {
-//    max-width: 1200px;
-//    margin: 0 auto;
-//    clear: both;
-//    padding: 0 15px;
-//}
-//
-////img & a
-//img {
-//    max-width: 100%;
-//    vertical-align: middle;
-//}
-//
-//a {
-//    text-decoration: none;
-//}
-//
-//* {
-//    box-sizing: border-box;
-//}
-//
-//// tytitles sekctions
-//.aside-title {
-//    margin-bottom: 40px;
-//    @include center-text;
-//    p{
-//        font-size: 22px;
-//    }
-//}
-//
-//// headers
-//h1,
-//h2,
-//h3 {
-//    line-height: 1.2;
-//}
-//
-//p {
-//    line-height: 1.1;
-//}
-//
-//// mixin for buttons
-//.basic-button($color;
-//$background-color) {
-//    color: $color;
-//    background-color: $background-color;
-//    text-decoration: none;
-//    @include inline-block;
-//    font-style: $basic-font-size;
-//    font-weight: 250;
-//    line-height: $basic-line-height;
-//    text-transform: uppercase;
-//}
-//
-//// all page
-//#main-container {
-//    padding-top: 53px;
-//}
-//
-//
-///***      header     ***/
-//
+////TODO Weź to podziel bo żal patrzeć
+@import 'helpers';
+
+// MEDIA QUERIES
+$columns: 12;
+$column-width: 65;
+$gutter-width: 30;
+// TODO zdrób coś z rym tu mogą być bugi                    $total-width: 100%;
+
+.our-services .single-col {
+@include column(12);
+    @media ($phone) {
+    @include column(6);
+}
+    @media ($tablet) {
+    @include column(3);
+}
+}
+
+.skills .single-col {
+@include column(6);
+    @media ($phone) {
+    @include column(3);
+}
+    @media ($tablet) {
+    @include column(2);
+}
+}
+
+.advanteges .single-col {
+@include column(12);
+    @media ($phone) {
+    @include column(6);
+}
+    @media ($tablet) {
+    @include column(4);
+}
+}
+
+.statistics .single-col {
+@include column(12);
+    @media ($phone) {
+    @include column(6);
+}
+    @media ($tablet) {
+    @include column(3);
+}
+}
+
+// Container
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    clear: both;
+    padding: 0 15px;
+}
+
+//img & a
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// tytitles sekctions
+.aside-title {
+    margin-bottom: 40px;
+    @extend %center-text;
+    p{
+        font-size: 22px;
+    }
+}
+
+// headers
+h1, h2, h3, p {
+    line-height: 1.2;
+}
+
+// mixin for buttons
+@mixin basic-button($color, $background-color) {
+    color: $color;
+    background-color: $background-color;
+    text-decoration: none;
+    @include inline-block;
+    font-style: $basic-font-size;
+    font-weight: 250;
+    line-height: $basic-line-height;
+    text-transform: uppercase;
+}
+
+// all page
+#main-container {
+    padding-top: 53px;
+}
+
+
+/***      header     ***/
+
 //header {
 //    z-index: 1000;
 //    position: fixed;
@@ -119,28 +114,26 @@
 //    box-shadow: 0 0 1px $basic-border-color;
 //    .navbar {
 //        height: 120px;
-//        @media $tablet {
+//        @media ($tablet) {
 //        height: 60px;
 //    }
 //        .nav-logo {
-//        @include float-left;
-//        @include center-vertical;
-//            .size(360px;
-//            120px);
+//        @extend %float-left;
+//        @extend %center-vertical;
+//            @include size(360px, 120px);
 //            z-index: 2;
 //            padding: 24px;
-//            @media $tablet {
-//            .size(180px;
-//            60px);
+//            @media ($tablet) {
+//                @include size(180px, 60px);
 //            padding: 12px;
 //        }
 //        }
 //        #lang-select {
-//        @include float-left;
-//        @include center-vertical;
+//        @extend %float-left;
+//        @extend %center-vertical;
 //            z-index: 2;
 //            padding: 24px;
-//            @media $tablet {
+//            @media ($tablet) {
 //            padding: 12px;
 //        }
 //            #lang-pl {
@@ -152,13 +145,11 @@
 //            }
 //            .lang {
 //                border-radius: 5px;
-//                .size(66px;
-//                50px);
+//                @include size(66px, 50px);
 //                background-position: center;
-//                @media $tablet {
-//                .size(33px;
-//                25px);
-//            }
+//                @media ($tablet) {
+//                    @include size(33px, 25px);
+//                }
 //            }
 //        }
 //    }
@@ -167,18 +158,18 @@
 //// hidde main menu
 //#main-menu {
 //@include invisible;
-//    @media $tablet {
+//    @media ($tablet) {
 //    @include block;
 //}
 //}
 //
 //.main-menu-content {
 //    @include float-right;
-//    @include center-vertical;
+//    @extend %center-vertical;
 //    ul {
 //        @include list-style-none;
 //        li {
-//            @include float-left;
+//            @extend %float-left;
 //            @include block;
 //            a {
 //                color: $menu-link-color;
@@ -191,7 +182,7 @@
 //                &:hover {
 //                    color: $accent-color;
 //                }
-//                @media $tablet {
+//                @media ($tablet) {
 //                padding: 18px 22px;
 //            }
 //            }
@@ -207,11 +198,11 @@
 //    position: fixed;
 //    left: 0;
 //    right: 0;
-//    @media $tablet {
-//    @include invisible;
-//}
+//    @media ($tablet) {
+//        @include invisible;
+//    }
 //    i {
-//        .invisible
+//        @include invisible
 //    }
 //    ul {
 //        @include section-border-bottom;
@@ -245,7 +236,7 @@
 //.bx-viewport {
 //    img {
 //    @include invisible;
-//        @media $tablet {
+//        @media ($tablet) {
 //        @include block;
 //        position: absolute;
 //        right: 5%;
@@ -260,14 +251,14 @@
 //    color: $brightest-text-color;
 //    position: relative;
 //    z-index: 1;
-//    @media $tablet {
+//    @media ($tablet) {
 //    padding: 15% 4%;
 //}
 //    h1 {
 //        font-size: 54px;
 //        line-height: 64px;
 //        font-weight: 400;
-//        @media $tablet {
+//        @media ($tablet) {
 //        font-size: 46px;
 //        line-height: 60px;
 //    }
@@ -277,22 +268,21 @@
 //        margin-top: 10px;
 //        font-size: 32px;
 //        line-height: 42px;
-//        @media $tablet {
+//        @media ($tablet) {
 //        font-size: 18px;
 //    }
 //    }
 //    a {
 //        font-size: 24px;
 //        position: relative;
-//        .basic-button($brightest-text-color;
-//        none);
+//        @include basic-button($brightest-text-color, none);
 //        margin: 12px 0;
 //        padding: 20px 36px;
 //        border: 2px solid $brightest-text-color;
 //        @include basic-transition;
 //        &:hover {
 //            background-color: $accent-color;
-//            @media $tablet {
+//            @media ($tablet) {
 //        }
 //        }
 //    }
@@ -305,13 +295,12 @@
 //    .single-col {
 //        min-height: 400px;
 //        margin-bottom: 5px;
-//    @include center-text;
+//    @extend %center-text;
 //        span {
 //            @include inline-block;
-//            .size(150px;
-//            150px);
+//            @include size(150px, 150px);
 //            background-color: $alternative-background;
-//            @include center-text;
+//            @extend %center-text;
 //            @include border-radius-single(50%);
 //            margin-bottom: 30px;
 //            @include basic-transition;
@@ -331,7 +320,7 @@
 //        h3{
 //            margin-bottom: 14px;
 //        }
-//        @media $tablet {
+//        @media ($tablet) {
 //        margin-bottom: 0;
 //    }
 //    }
@@ -356,25 +345,19 @@
 //        opacity: 1;
 //    }
 //    &:hover h3 {
-//        .translate3d(0%;
-//    0%;
-//    0%);
+//        @include translate3d(0%, 0%, 0%);
 //    }
 //    &:hover p {
-//        .translate3d(0%;
-//    0%;
-//    0%);
+//        @include translate3d(0%, 0%, 0%);
 //    }
 //    &:hover a {
-//        .translate3d(0%;
-//    0%;
-//    0%);
+//        @include translate3d(0%, 0%, 0%);
 //    }
 //}
 //
 //.portfolio-hover {
 //    @include absolute-one-hundred-size;
-//    @include center-text;
+//    @extend %center-text;
 //    @include basic-transition;
 //    owerflow: hidden;
 //    background-color: $box-portfolio-background;
@@ -387,34 +370,25 @@
 //    top: 50%;
 //    transform: translateY(-50%);
 //    h3 {
-//        .header-mixin(32px;
-//        16px;
-//        $basic-background);
-//        .translate3d(0%;
-//        -400%;
-//    0%);
-//    @include variable-transition(0.8s);
+//        @include header-mixin(32px, 16px, $basic-background);
+//        @include translate3d(0%, -400%, 0%);
+//        @include variable-transition(0.8s);
 //    }
 //    p {
 //        color: $basic-background;
 //        margin: 20px 0;
-//        .translate3d(0%;
-//        -400%;
-//    0%);
-//    @include variable-transition(0.8s);
+//        @include translate3d(0%, -400%, 0%);
+//        @include variable-transition(0.8s);
 //    }
 //    a {
-//    @include inline-block;
-//        .size(70px;
-//        70px);
-//    @include border-radius-single(50%);
+//        @include inline-block;
+//        @include size(70px, 70px);
+//        @include border-radius-single(50%);
 //        border: 2px solid $basic-background;
-//    @include center-text;
+//        @extend %center-text;
 //        margin: 0 5px;
-//        .translate3d(0%;
-//    400%;
-//    0%);
-//    @include variable-transition(0.8s);
+//        @include translate3d(0%, 400%, 0%);
+//        @include variable-transition(0.8s);
 //    i {
 //        line-height: 70px;
 //        font-size: 40px;
@@ -441,12 +415,11 @@
 //    padding: 120px 20px;
 //    @include section-border-top;
 //    @include clearfix;
-//    .single-col {
+//    @include single-col {
 //        margin-bottom: 30px;
-//        @include center-text;
+//        @extend %center-text;
 //        img {
-//            .size(150px;
-//            150px);
+//            @include size(150px, 150px);
 //            margin: 0 auto;
 //            @include block;
 //            @include center-no-float;
@@ -465,14 +438,13 @@
 //        padding: 175px 0;
 //        z-index: 2;
 //    }
-//    @media $desktop {
+//    @media ($desktop) {
 //    @include block;
 //}
 //}
 //
 //#movie {
-//    .size(100%;
-//100%);
+//    @include size(100%, 100%);
 //&:after {
 //    @include dark-overlay;
 //}
@@ -480,11 +452,9 @@
 //
 //// video line
 //.video-ilne {
-//    @include center-text;
+//    @extend %center-text;
 //    h2 {
-//        .header-mixin(48px;
-//        26px;
-//        $brightest-text-color);
+//        @include header-mixin(48px, 26px, $brightest-text-color);
 //        position: relative;
 //    }
 //}
@@ -494,12 +464,12 @@
 //    @include section-border-top;
 //    @include clearfix;
 //    .single-col {
-//    @include center-text;
+//    @extend %center-text;
 //        margin-bottom: 30px;
 //        min-height: 250px;
-//        @media $desktop {
-//        min-height: 120px;
-//    }
+//        @media ($desktop) {
+//            min-height: 120px;
+//        }
 //        span {
 //        @include block;
 //        @include center-no-float;
@@ -508,7 +478,7 @@
 //                font-size: 70px;
 //                color: $accent-color;
 //            }
-//            @media $phone {
+//            @media ($phone) {
 //            @include inline-block;
 //            @include no-center-float;
 //            margin-bottom: 0;
@@ -517,11 +487,11 @@
 //        .services-content {
 //            margin-left: 0px;
 //            padding-left: 15px;
-//            @media $phone {
+//            @media ($phone) {
 //            margin-left: 70px;
 //        }
 //        }
-//        @media $phone {
+//        @media ($phone) {
 //        text-align: left;
 //    }
 //    }
@@ -533,7 +503,7 @@
 //    @include overflow-fix;
 //    padding: 80px 0;
 //    .single-col {
-//        @include center-text;
+//        @extend %center-text;
 //        .statistics-content {
 //            margin-bottom: 20px;
 //            h3 {
@@ -547,7 +517,7 @@
 //
 //// Paralax
 //.photo-banner {
-//    @include center-text;
+//    @extend %center-text;
 //    background: url(../images/Cover.jpg) no-repeat center center fixed;
 //    -webkit-background-size: cover;
 //    -moz-background-size: cover;
@@ -564,24 +534,20 @@
 //            z-index: 1;
 //            padding: 170px 0;
 //        }
-//        @include center-text;
+//        @extend %center-text;
 //        h2 {
-//            .header-mixin(48px;
-//            26px;
-//            $brightest-text-color);
+//            @include header-mixin(48px, 26px, $brightest-text-color);
 //            position: relative;
 //        }
 //        a {
 //            font-size: 20px;
 //            position: relative;
-//            .basic-button($brightest-text-color;
-//            $accent-color);
+//            @include basic-button($brightest-text-color, $accent-color);
 //            padding: 18px 38px;
 //            margin: 8px 0;
 //            @include basic-transition;
 //            &:hover {
-//                .basic-button($accent-color;
-//                $brightest-text-color);
+//                @include basic-button($accent-color, $brightest-text-color);
 //            }
 //        }
 //    }
@@ -590,7 +556,7 @@
 //// About me
 //.our-team {
 //    padding: 80px 0 0 0;
-//    @include center-text;
+//    @extend %center-text;
 //    @include section-border-bottom;
 //    @include overflow-fix;
 //    .single-col {
@@ -604,7 +570,7 @@
 //}
 //
 //.team-member {
-//    @include center-text;
+//    @extend %center-text;
 //    img {
 //        margin-bottom: 30px;
 //        width: 300px;
@@ -614,7 +580,7 @@
 //    span {
 //        line-height: 24px;
 //        margin: 0 0 17px 0;
-//        .inline-block
+//        @include inline-block
 //    }
 //}
 //
@@ -639,7 +605,7 @@
 //.section-info-text {
 //    background-color: $accent-color;
 //    padding: 60px 0;
-//    @include center-text;
+//    @extend %center-text;
 //    h2 {
 //        font-size: 40px;
 //        color: $brightest-text-color;
@@ -648,8 +614,7 @@
 //    }
 //    a {
 //        font-size: 22px;
-//        .basic-button($brightest-text-color;
-//        $accent-color);
+//        @include basic-button($brightest-text-color, $accent-color);
 //        margin: 8px 20px;
 //        padding: 15px 40px;
 //        border: 2px solid $brightest-text-color;
@@ -701,7 +666,6 @@
 //            background-color: $accent-color;
 //            text-decoration: none;
 //            display: inline-block;
-//            font-style: 13px;
 //            font-weight: 400;
 //            line-height: 24px;
 //            text-transform: uppercase;

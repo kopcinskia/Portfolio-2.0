@@ -1,7 +1,7 @@
 //phone
-$phone: #{"only screen and (min-width: 800px)"};
-$tablet: #{"only screen and (min-width: 1024px)"};
-$desktop: #{"only screen and (min-width: 1280px)"};
+$phone: 800px;
+$tablet: 1024px;
+$desktop: 1280px;
 // Wyrownanie, pozycjowanie
 %center-text {
     text-align: center;
