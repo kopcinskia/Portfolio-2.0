@@ -19,33 +19,33 @@ $desktop: 1280px;
     float: none;
 }
 
-.center-no-float {
+%center-no-float {
     @extend %float-none;
     @extend %center-text;
 }
 
-.no-center-float {
+%no-center-float {
     @extend %float-left;
     text-align: initial;
 }
 
 // wyrowanie w pionie
-.center-vertical {
+%center-vertical {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
 // Widocznosc
-.invisible {
+%invisible {
     display: none;
 }
 
-.inline-block {
+%inline-block {
     display: inline-block;
 }
 
-.block {
+%block {
     display: block;
 }
 
@@ -64,7 +64,7 @@ $desktop: 1280px;
 }
 
 // Listy
-.list-style-none {
+%list-style-none {
     list-style-type: none;
 }
 
@@ -82,11 +82,11 @@ $desktop: 1280px;
 }
 
 // Elementy plywajace
-.overflow-fix {
+%overflow-fix {
     overflow: auto;
 }
 
-.clearfix {
+%clearfix {
     &:after {
         content: "";
         display: table;
@@ -111,7 +111,7 @@ $desktop: 1280px;
 }
 
 // podstawowe przejscie 0.4s
-.basic-transition {
+%basic-transition {
     transition: all 0.4s ease-in-out;
 }
 
@@ -128,7 +128,7 @@ $desktop: 1280px;
 }
 
 //Nakladka
-.dark-overlay {
+%dark-overlay {
     content: "";
     z-index: 0;
     @extend %absolute-one-hundred-size;

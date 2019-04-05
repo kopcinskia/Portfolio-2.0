@@ -88,7 +88,7 @@ h1, h2, h3, p {
     color: $color;
     background-color: $background-color;
     text-decoration: none;
-    @include inline-block;
+    @extend %inline-block;
     font-style: $basic-font-size;
     font-weight: 250;
     line-height: $basic-line-height;
@@ -103,74 +103,74 @@ h1, h2, h3, p {
 
 /***      header     ***/
 
-//header {
-//    z-index: 1000;
-//    position: fixed;
-//    top: 0;
-//    left: 0;
-//    right: 0;
-//    background: $basic-background;
-//    border-bottom: 1px solid $basic-border-color;
-//    box-shadow: 0 0 1px $basic-border-color;
-//    .navbar {
-//        height: 120px;
-//        @media ($tablet) {
-//        height: 60px;
-//    }
-//        .nav-logo {
-//        @extend %float-left;
-//        @extend %center-vertical;
-//            @include size(360px, 120px);
-//            z-index: 2;
-//            padding: 24px;
-//            @media ($tablet) {
-//                @include size(180px, 60px);
-//            padding: 12px;
-//        }
-//        }
-//        #lang-select {
-//        @extend %float-left;
-//        @extend %center-vertical;
-//            z-index: 2;
-//            padding: 24px;
-//            @media ($tablet) {
-//            padding: 12px;
-//        }
-//            #lang-pl {
-//                background-image: url(../images/pl.png);
-//            }
-//            #lang-ang {
-//                background-image: url(../images/ang.png);
-//                background-size: contain;
-//            }
-//            .lang {
-//                border-radius: 5px;
-//                @include size(66px, 50px);
-//                background-position: center;
-//                @media ($tablet) {
-//                    @include size(33px, 25px);
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//// hidde main menu
+header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $basic-background;
+    border-bottom: 1px solid $basic-border-color;
+    box-shadow: 0 0 1px $basic-border-color;
+    .navbar {
+        height: 120px;
+        @media ($tablet) {
+        height: 60px;
+    }
+        .nav-logo {
+        @extend %float-left;
+        @extend %center-vertical;
+            @include size(360px, 120px);
+            z-index: 2;
+            padding: 24px;
+            @media ($tablet) {
+                @include size(180px, 60px);
+            padding: 12px;
+        }
+        }
+        #lang-select {
+        @extend %float-left;
+        @extend %center-vertical;
+            z-index: 2;
+            padding: 24px;
+            @media ($tablet) {
+            padding: 12px;
+        }
+            #lang-pl {
+                background-color: red;
+            }
+            #lang-ang {
+                background-color: red;
+                background-size: contain;
+            }
+            .lang {
+                border-radius: 5px;
+                @include size(66px, 50px);
+                background-position: center;
+                @media ($tablet) {
+                    @include size(33px, 25px);
+                }
+            }
+        }
+    }
+}
+
+// hidde main menu
 //#main-menu {
-//@include invisible;
+//@extend %invisible;
 //    @media ($tablet) {
-//    @include block;
+//    @extend %block;
 //}
 //}
 //
 //.main-menu-content {
-//    @include float-right;
+//    @extend %float-right;
 //    @extend %center-vertical;
 //    ul {
-//        @include list-style-none;
+//        @extend %list-style-none;
 //        li {
 //            @extend %float-left;
-//            @include block;
+//            @extend %block;
 //            a {
 //                color: $menu-link-color;
 //                font-size: 20px;
@@ -178,7 +178,7 @@ h1, h2, h3, p {
 //                font-weight: 400;
 //                padding: 10px 14px;
 //                line-height: 20px;
-//            @include basic-transition;
+//            @extend %basic-transition;
 //                &:hover {
 //                    color: $accent-color;
 //                }
@@ -199,10 +199,10 @@ h1, h2, h3, p {
 //    left: 0;
 //    right: 0;
 //    @media ($tablet) {
-//        @include invisible;
+//        @extend %invisible;
 //    }
 //    i {
-//        @include invisible
+//        @extend %invisible
 //    }
 //    ul {
 //        @include section-border-bottom;
@@ -218,7 +218,7 @@ h1, h2, h3, p {
 //        background-repeat: no-repeat;
 //        background-position: bottom;
 //        &:after {
-//            @include dark-overlay;
+//            @extend %dark-overlay;
 //        }
 //    }
 //    .main-slide-2 {
@@ -227,7 +227,7 @@ h1, h2, h3, p {
 //        background-repeat: no-repeat;
 //        background-position: 0 0;
 //        &:after {
-//            @include dark-overlay;
+//            @extend %dark-overlay;
 //        }
 //    }
 //}
@@ -235,9 +235,9 @@ h1, h2, h3, p {
 //// img in slider
 //.bx-viewport {
 //    img {
-//    @include invisible;
+//    @extend %invisible;
 //        @media ($tablet) {
-//        @include block;
+//        @extend %block;
 //        position: absolute;
 //        right: 5%;
 //        top: 20%;
@@ -279,7 +279,7 @@ h1, h2, h3, p {
 //        margin: 12px 0;
 //        padding: 20px 36px;
 //        border: 2px solid $brightest-text-color;
-//        @include basic-transition;
+//        @extend %basic-transition;
 //        &:hover {
 //            background-color: $accent-color;
 //            @media ($tablet) {
@@ -291,19 +291,19 @@ h1, h2, h3, p {
 //// What we do?
 //.our-services {
 //    padding: 60px 80px;
-//    @include overflow-fix;
+//    @extend %overflow-fix;
 //    .single-col {
 //        min-height: 400px;
 //        margin-bottom: 5px;
 //    @extend %center-text;
 //        span {
-//            @include inline-block;
+//            @extend %inline-block;
 //            @include size(150px, 150px);
 //            background-color: $alternative-background;
 //            @extend %center-text;
 //            @include border-radius-single(50%);
 //            margin-bottom: 30px;
-//            @include basic-transition;
+//            @extend %basic-transition;
 //            &:hover {
 //                background-color: $accent-color;
 //            }
@@ -356,9 +356,9 @@ h1, h2, h3, p {
 //}
 //
 //.portfolio-hover {
-//    @include absolute-one-hundred-size;
+//    @extend %absolute-one-hundred-size;
 //    @extend %center-text;
-//    @include basic-transition;
+//    @extend %basic-transition;
 //    owerflow: hidden;
 //    background-color: $box-portfolio-background;
 //    opacity: 0;
@@ -381,7 +381,7 @@ h1, h2, h3, p {
 //        @include variable-transition(0.8s);
 //    }
 //    a {
-//        @include inline-block;
+//        @extend %inline-block;
 //        @include size(70px, 70px);
 //        @include border-radius-single(50%);
 //        border: 2px solid $basic-background;
@@ -393,7 +393,7 @@ h1, h2, h3, p {
 //        line-height: 70px;
 //        font-size: 40px;
 //        color: $basic-background;
-//        @include basic-transition;
+//        @extend %basic-transition;
 //    }
 //        &:hover {
 //            background-color: $basic-background;
@@ -414,15 +414,15 @@ h1, h2, h3, p {
 //#skills {
 //    padding: 120px 20px;
 //    @include section-border-top;
-//    @include clearfix;
-//    @include single-col {
+//    @extend %clearfix;
+//    .single-col {
 //        margin-bottom: 30px;
 //        @extend %center-text;
 //        img {
 //            @include size(150px, 150px);
 //            margin: 0 auto;
-//            @include block;
-//            @include center-no-float;
+//            @extend %block;
+//            @extend %center-no-float;
 //        }
 //        .services-content {
 //            margin-left: 0;
@@ -432,21 +432,21 @@ h1, h2, h3, p {
 //
 ////Section video
 //.section-video {
-//@include invisible;
+//@extend %invisible;
 //    position: relative;
 //    .container {
 //        padding: 175px 0;
 //        z-index: 2;
 //    }
 //    @media ($desktop) {
-//    @include block;
+//    @extend %block;
 //}
 //}
 //
 //#movie {
 //    @include size(100%, 100%);
 //&:after {
-//    @include dark-overlay;
+//    @extend %dark-overlay;
 //}
 //}
 //
@@ -462,7 +462,7 @@ h1, h2, h3, p {
 //.advanteges {
 //    padding: 50px 30px;
 //    @include section-border-top;
-//    @include clearfix;
+//    @extend %clearfix;
 //    .single-col {
 //    @extend %center-text;
 //        margin-bottom: 30px;
@@ -471,18 +471,18 @@ h1, h2, h3, p {
 //            min-height: 120px;
 //        }
 //        span {
-//        @include block;
-//        @include center-no-float;
+//            @extend %block;
+//            @extend %center-no-float;
 //            margin: 20px 0;
 //            i {
 //                font-size: 70px;
 //                color: $accent-color;
 //            }
 //            @media ($phone) {
-//            @include inline-block;
-//            @include no-center-float;
-//            margin-bottom: 0;
-//        }
+//                @extend %inline-block;
+//                text-align: initial;
+//                margin-bottom: 0;
+//            }
 //        }
 //        .services-content {
 //            margin-left: 0px;
@@ -500,7 +500,7 @@ h1, h2, h3, p {
 //// Statystcs
 //.statistics {
 //    background-color: $alternative-background;
-//    @include overflow-fix;
+//    @extend %overflow-fix;
 //    padding: 80px 0;
 //    .single-col {
 //        @extend %center-text;
@@ -527,7 +527,7 @@ h1, h2, h3, p {
 //        position: relative;
 //        z-index: 0;
 //        &:after {
-//            @include dark-overlay;
+//            @extend %dark-overlay;
 //        }
 //        .container {
 //            position: relative;
@@ -545,7 +545,7 @@ h1, h2, h3, p {
 //            @include basic-button($brightest-text-color, $accent-color);
 //            padding: 18px 38px;
 //            margin: 8px 0;
-//            @include basic-transition;
+//            @extend %basic-transition;
 //            &:hover {
 //                @include basic-button($accent-color, $brightest-text-color);
 //            }
@@ -558,14 +558,14 @@ h1, h2, h3, p {
 //    padding: 80px 0 0 0;
 //    @extend %center-text;
 //    @include section-border-bottom;
-//    @include overflow-fix;
+//    @extend %overflow-fix;
 //    .single-col {
 //        margin: 20px;
 //    }
 //}
 //
 //.team-members {
-//    @include overflow-fix;
+//    @extend %overflow-fix;
 //    margin-bottom: 40px;
 //}
 //
@@ -580,19 +580,19 @@ h1, h2, h3, p {
 //    span {
 //        line-height: 24px;
 //        margin: 0 0 17px 0;
-//        @include inline-block
+//        @extend %inline-block
 //    }
 //}
 //
 //.members-social {
-//    @include list-style-none;
+//    @extend %list-style-none;
 //    li {
-//        @include inline-block;
+//        @extend %inline-block;
 //        margin-right: 18px;
 //        i {
 //            font-size: 35px;
 //            color: darken($alternative-background, 20%);
-//            @include basic-transition;
+//            @extend %basic-transition;
 //            &:hover {
 //                color: darken($alternative-background, 10%)
 //            }
@@ -619,7 +619,7 @@ h1, h2, h3, p {
 //        padding: 15px 40px;
 //        border: 2px solid $brightest-text-color;
 //        @include border-radius-single(2px);
-//        @include basic-transition;
+//        @extend %basic-transition;
 //        &:hover {
 //            color: $accent-color;
 //            background-color: $brightest-text-color;
