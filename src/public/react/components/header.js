@@ -13,10 +13,8 @@ const Nav_top = () => {
                     </div>
 
                     <div id="lang-select">
-
                     </div>
                     <div className="main-menu-content">
-                        <h2>Działa!</h2>
                         <ul id="main-menu">
                             <li><a href="#" lang="pl">Start</a></li>
                             <li><a href="#" lang="pl">Portfolio</a></li>

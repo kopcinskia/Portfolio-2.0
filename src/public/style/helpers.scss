@@ -45,9 +45,17 @@ $desktop: 1280px;
     display: inline-block;
 }
 
+//@mixin block{
+//    @extend %block;
+//}
+
 %block {
     display: block;
 }
+
+//.block {
+//
+//}
 
 // rozmiary
 %absolute-one-hundred-size {
