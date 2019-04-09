@@ -21,7 +21,7 @@ header {
       @include size(360px, 120px);
       z-index: 2;
       padding: 24px;
-      @media ($tablet) {
+      @media (max-width: $tablet) {
         @include size(180px, 60px);
         padding: 12px;
       }
@@ -34,10 +34,10 @@ header {
         //background-url: url('dist/images/20170317_153849.jpg');      }
         @include size(40px, 40px);
         background-color: black;
-        @media (min-width: $phone) {
+        @media (max-width: $phone) {
           display: inline-block;
         }
-        @media (min-width: $tablet){
+        @media (min-width: $phone){
           display: none;
         }
       }
@@ -57,10 +57,10 @@ header {
             &:hover {
               color: $accent-color;
             }
-            @media (min-width: $phone) {
+            @media (max-width: $phone) {
               display: none;
             }
-            @media (min-width: $tablet) {
+            @media (min-width: $phone) {
               display: inline-block;
               padding: 18px 22px;
             }
