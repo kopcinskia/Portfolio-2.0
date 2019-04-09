@@ -6,27 +6,34 @@ const Nav_top = () => {
         <nav>
             <div className="container">
                 <div className="navbar">
+
                     <div className="nav-logo">
                         <a href="#">
-                            <img src="#" alt="logo"/>
+                            <img src="./images/logoAK.png" alt="logo"/>
                         </a>
                     </div>
 
-                    <div id="lang-select">
-                    </div>
+
                     <div className="main-menu-content">
+                        <div id="hamburger">
+
+                        </div>
+
                         <ul id="main-menu">
-                            <li><a href="#" lang="pl">Start</a></li>
-                            <li><a href="#" lang="pl">Portfolio</a></li>
-                            <li><a href="#" lang="pl">Umiejętności</a></li>
-                            <li><a href="#" lang="pl">Zalety</a></li>
-                            <li><a href="#" lang="pl">O mnie</a></li>
+                            <li><a href="#" lang="pl">home</a></li>
+                            <li><a href="#" lang="pl">projects</a></li>
+                            <li><a href="#" lang="pl">contact</a></li>
                         </ul>
                     </div>
 
-                    <div id="attach-mobile-menu">
-
+                    <div id="lang-select">
+                        <button id="lang-pl" className="lang">a</button>
+                        <button id="lang-ang" className="lang">a</button>
                     </div>
+
+
+
+
                 </div>
             </div>
         </nav>

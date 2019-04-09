@@ -1,119 +1,118 @@
-//
-// body {
-//  background-color: $accent-color;
-// }
-//
-// header {
-//  z-index: 1000;
-//  position: fixed;
-//  top: 40px;
-//  left: 0;
-//  right: 0;
-//  background: $basic-background;
-//  border-bottom: 1px solid $basic-border-color;
-//  box-shadow: 0 0 1px $basic-border-color;
-//}
-////  .navbar {
-////    height: 120px;
-////    $media;
-////    $tablet;
-////  {
-////    height: 60px;
-////  }
-////  }
-////}
-////    .nav-logo {
-////      .float-left;
-////      .center-vertical;
-////      .size(360px; 120px);
-////      z-index: 2;
-////      padding: 24px;
-////      $media $tablet {
-////      .size(180px;
-////      60px);
-////      padding: 12px;
-////    }
-////    }
-////    #lang-select {
-////      .float-left;
-////      .center-vertical;
-////      z-index: 2;
-////      padding: 24px;
-////      $media $tablet {
-////      padding: 12px;
-////    }
-////      #lang-pl {
-////        background-image: url(../images/pl.png);
-////      }
-////      #lang-ang {
-////        background-image: url(../images/ang.png);
-////        background-size: contain;
-////      }
-////      .lang {
-////        border-radius: 5px;
-////        .size(66px;
-////        50px);
-////        background-position: center;
-////        $media $tablet {
-////        .size(33px;
-////        25px);
-////      }
-////      }
-////    }
-////  }
-////}
-////
-////// hidde main menu
-////#main-menu {
-////  .invisible;
-////  $media $tablet {
-////  .block;
-////}
-////}
-////
-////.main-menu-content {
-////  .float-right;
-////  .center-vertical;
-////  ul {
-////    .list-style-none;
-////    li {
-////      .float-left;
-////      .block;
-////      a {
-////        color: $menu-link-color;
-////        font-size: 20px;
-////        font-family: $font-family-secondary;
-////        font-weight: 400;
-////        padding: 10px 14px;
-////        line-height: 20px;
-////        .basic-transition;
-////        &:hover {
-////          color: $accent-color;
-////        }
-////        $media $tablet {
-////        padding: 18px 22px;
-////      }
-////      }
-////      i {
-////        font-size: 14px;
-////      }
-////    }
-////  }
-////}
-////
-////// menu moblie
-////.slicknav_menu {
-////  position: fixed;
-////  left: 0;
-////  right: 0;
-////  $media $tablet {
-////  .invisible;
-////}
-////  i {
-////    .invisible
-////  }
-////  ul {
-////    .section-border-bottom;
-////    box-shadow: 0 0 1px $basic-border-color;
-////  }
-////}
+
+
+/***      header     ***/
+header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $basic-background;
+  border-bottom: 1px solid $basic-border-color;
+  box-shadow: 0 0 1px $basic-border-color;
+  .navbar {
+    height: 120px;
+    @media ($tablet) {
+      height: 60px;
+    }
+    .nav-logo {
+      @extend %float-left;
+      @extend %center-vertical;
+      @include size(360px, 120px);
+      z-index: 2;
+      padding: 24px;
+      @media ($tablet) {
+        @include size(180px, 60px);
+        padding: 12px;
+      }
+    }
+    .main-menu-content {
+      @extend %no-center-float;
+      @extend %center-vertical;
+      #hamburger {
+        // TODO add image loader
+        //background-url: url('dist/images/20170317_153849.jpg');      }
+        @include size(40px, 40px);
+        background-color: black;
+        @media (min-width: $phone) {
+          display: inline-block;
+        }
+        @media (min-width: $tablet){
+          display: none;
+        }
+      }
+      ul {
+        @extend %list-style-none;
+        li {
+          @extend %float-left;
+          @extend %block;
+          a {
+            color: $menu-link-color;
+            font-size: 20px;
+            font-family: $font-family-secondary;
+            font-weight: 400;
+            padding: 10px 14px;
+            line-height: 20px;
+            @extend %basic-transition;
+            &:hover {
+              color: $accent-color;
+            }
+            @media (min-width: $phone) {
+              display: none;
+            }
+            @media (min-width: $tablet) {
+              display: inline-block;
+              padding: 18px 22px;
+            }
+          }
+          i {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    #lang-select {
+      @extend %float-right;
+      @extend %center-vertical;
+      z-index: 2;
+      padding: 24px;
+      @media ($tablet) {
+        padding: 12px;
+      }
+      #lang-pl {
+        background-color: $accent-color;
+      }
+      #lang-ang {
+        background-color: $accent-color;
+        background-size: contain;
+      }
+      .lang {
+        border-radius: 5px;
+        @include size(66px, 50px);
+        background-position: center;
+        @media ($tablet) {
+          @include size(33px, 25px);
+        }
+      }
+    }
+  }
+}
+
+//main menu
+
+// menu moblie
+.slicknav_menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  @media ($tablet) {
+    display: none; //@extend %invisible
+  }
+  i {
+    display: none; //@extend %invisible
+  }
+  ul {
+    @include section-border-bottom;
+    box-shadow: 0 0 1px $basic-border-color;
+  }
+}
