@@ -1,5 +1,3 @@
-
-
 /***      header     ***/
 header {
   z-index: 1000;
@@ -10,37 +8,53 @@ header {
   background: $basic-background;
   border-bottom: 1px solid $basic-border-color;
   box-shadow: 0 0 1px $basic-border-color;
+  opacity: 80%;
   .navbar {
-    height: 120px;
-    @media ($tablet) {
-      height: 60px;
+
+    margin: 0 100px;
+    height: 100px;
+    @media (max-width: $tablet) {
+      margin: 0 50px;
     }
     .nav-logo {
-      @extend %float-left;
-      @extend %center-vertical;
-      @include size(360px, 120px);
-      z-index: 2;
-      padding: 24px;
-      @media (max-width: $tablet) {
-        @include size(180px, 60px);
-        padding: 12px;
-      }
-    }
-    .main-menu-content {
       @extend %no-center-float;
       @extend %center-vertical;
-      #hamburger {
-        // TODO add image loader
-        //background-url: url('dist/images/20170317_153849.jpg');      }
-        @include size(40px, 40px);
-        background-color: black;
-        @media (max-width: $phone) {
-          display: inline-block;
-        }
-        @media (min-width: $phone){
-          display: none;
+      @include size(180px, 60px);
+      z-index: 2;
+      padding: 12px;
+      a{
+        img{
+          background: url('../../images/logoAK.png') no-repeat;
+          background-size: 100%;
         }
       }
+    }
+    #lang-select {
+      @extend %float-right;
+      @extend %center-vertical;
+      z-index: 2;
+      padding: 24px;
+      #lang-pl {
+        background: url('../../images/pl.png');
+        background-position: center;
+        background-size: cover;
+      }
+      #lang-ang {
+        background: url('../../images/ang.png');
+        background-position: center;
+        background-size: cover;
+      }
+        .lang {
+        border-radius: 10px;
+        margin: 2px;
+        @include size(40px, 30px);
+        background-position: center;
+        }
+    }
+    .main-menu-content {
+      display: inline-block;
+      @extend %float-right;
+      @extend %center-vertical;
       ul {
         @extend %list-style-none;
         li {
@@ -70,31 +84,20 @@ header {
           }
         }
       }
-    }
-    #lang-select {
-      @extend %float-right;
-      @extend %center-vertical;
-      z-index: 2;
-      padding: 24px;
-      @media ($tablet) {
-        padding: 12px;
-      }
-      #lang-pl {
-        background-color: $accent-color;
-      }
-      #lang-ang {
-        background-color: $accent-color;
-        background-size: contain;
-      }
-      .lang {
-        border-radius: 5px;
-        @include size(66px, 50px);
-        background-position: center;
-        @media ($tablet) {
-          @include size(33px, 25px);
+      #hamburger {
+
+        @include size(40px, 40px);
+        background-color: black;
+
+        @media (max-width: $phone) {
+          display: inline-block;
+        }
+        @media (min-width: $phone){
+          display: none;
         }
       }
     }
+
   }
 }
 
@@ -105,7 +108,7 @@ header {
   position: fixed;
   left: 0;
   right: 0;
-  @media ($tablet) {
+  @media (max-width: $tablet) {
     display: none; //@extend %invisible
   }
   i {

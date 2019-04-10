@@ -1,7 +1,9 @@
 import React from 'react';
-import '../../../main.scss';
+import MobileMenu from './mobile_menu'
+import MenuContent from './menu_content'
+import '../../style/main.scss';
 
-const Nav_top = () => {
+const NavTop = () => {
     return <header>
         <nav>
             <div className="container">
@@ -12,32 +14,18 @@ const Nav_top = () => {
                             <img src="./images/logoAK.png" alt="logo"/>
                         </a>
                     </div>
-
-
-                    <div className="main-menu-content">
-                        <div id="hamburger">
-
-                        </div>
-
-                        <ul id="main-menu">
-                            <li><a href="#" lang="pl">home</a></li>
-                            <li><a href="#" lang="pl">projects</a></li>
-                            <li><a href="#" lang="pl">contact</a></li>
-                        </ul>
-                    </div>
-
                     <div id="lang-select">
-                        <button id="lang-pl" className="lang">a</button>
-                        <button id="lang-ang" className="lang">a</button>
+                        <button id="lang-pl" className="lang"></button>
+                        <button id="lang-ang" className="lang"></button>
                     </div>
-
-
-
-
+                    <div className="main-menu-content">
+                        <MenuContent />
+                        <MobileMenu id="hamburger" />
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 };
 
-export default Nav_top
+export default NavTop
