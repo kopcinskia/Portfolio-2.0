@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import MenuContent from './menu_content'
+// import '../../style/header/mobile_menu.scss';
 
 class MobileMenu extends Component {
     constructor() {
@@ -21,22 +22,27 @@ class MobileMenu extends Component {
         })
     }
 
-    closeMenu() {
-        this.setState({ showMenu: false }, () => {
-            document.removeEventListener('click', this.closeMenu);
-        });
+    closeMenu(event) {
+        if (!this.dropdownMenu.contains(event.target)) {
+            this.setState({showMenu: false}, () => {
+                document.removeEventListener('click', this.closeMenu);
+            });
+        }
     }
 
     render () {
         return(
-            <div className="container">
+            <div>
 
                 <button onClick={this.showMenu}>drop</button>
                 {
                     this.state.showMenu ?
                         (
-                            <div id="menu">
-                                <MenuContent/>
+                            <div id="menu"
+                                 ref={(element) => {
+                                     this.dropdownMenu = element;
+                                 }}>
+                                <MenuContent className={this.state.showMenu ? 'show-list' : null}/>
                             </div>
                         ) : (
                             null

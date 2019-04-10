@@ -1,0 +1,52 @@
+//.main-menu-content {
+//  display: inline-block;
+//  @extend %float-right;
+//  @extend %center-vertical;
+//  @media (max-width: $phone) {
+//    display: none;
+//    ul {
+//
+//      @extend %list-style-none;
+//      li {
+//        @extend %float-left;
+//        @extend %block;
+//        a {
+//          color: $menu-link-color;
+//          font-size: 20px;
+//          font-family: $font-family-secondary;
+//          font-weight: 400;
+//          padding: 10px 14px;
+//          line-height: 20px;
+//          @extend %basic-transition;
+//          &:hover {
+//            color: $accent-color;
+//          }
+//          @media (max-width: $phone) {
+//            display: none;
+//          }
+//          @media (min-width: $phone) {
+//            display: inline-block;
+//            padding: 18px 22px;
+//          }
+//        }
+//        i {
+//          font-size: 14px;
+//        }
+//      }
+//    }
+//  }
+//  #hamburger {
+//    button {
+//
+//      @include size(40px, 40px);
+//      background-color: black;
+//
+//      @media (max-width: $phone) {
+//        display: inline-block;
+//      }
+//      @media (min-width: $phone) {
+//        display: none;
+//      }
+//    }
+//  }
+//}

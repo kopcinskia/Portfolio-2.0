@@ -3,7 +3,7 @@ require('./public/style/main.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Container from './public/react/components/container';
-import NavTop from './public/react/components/header';
+import NavTop from './public/react/components/header/header';
 
 //TODO podziel html na komponenty reaktowe
 //TODO sprawdź co tam się wyswietla

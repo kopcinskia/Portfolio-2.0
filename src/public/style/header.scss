@@ -1,3 +1,6 @@
+@import 'header/menu_content';
+@import 'header/mobile_menu';
+
 /***      header     ***/
 header {
   z-index: 1000;
@@ -51,71 +54,59 @@ header {
         background-position: center;
         }
     }
-    .main-menu-content {
-      display: inline-block;
-      @extend %float-right;
-      @extend %center-vertical;
-      ul {
-        @extend %list-style-none;
-        li {
-          @extend %float-left;
-          @extend %block;
-          a {
-            color: $menu-link-color;
-            font-size: 20px;
-            font-family: $font-family-secondary;
-            font-weight: 400;
-            padding: 10px 14px;
-            line-height: 20px;
-            @extend %basic-transition;
-            &:hover {
-              color: $accent-color;
-            }
-            @media (max-width: $phone) {
-              display: none;
-            }
-            @media (min-width: $phone) {
-              display: inline-block;
-              padding: 18px 22px;
-            }
-          }
-          i {
-            font-size: 14px;
-          }
-        }
-      }
-      #hamburger {
-
-        @include size(40px, 40px);
-        background-color: black;
-
-        @media (max-width: $phone) {
-          display: inline-block;
-        }
-        @media (min-width: $phone){
-          display: none;
-        }
-      }
-    }
-
   }
 }
 
-//main menu
-
-// menu moblie
-.slicknav_menu {
-  position: fixed;
-  left: 0;
-  right: 0;
-  @media (max-width: $tablet) {
-    display: none; //@extend %invisible
-  }
-  i {
-    display: none; //@extend %invisible
-  }
+.main-menu-content {
+  display: inline-block;
+  @extend %float-right;
+  @extend %center-vertical;
   ul {
-    @include section-border-bottom;
-    box-shadow: 0 0 1px $basic-border-color;
+    @extend %list-style-none;
+    li {
+      @extend %float-left;
+      @extend %block;
+      a {
+        color: $menu-link-color;
+        font-size: 20px;
+        font-family: $font-family-secondary;
+        font-weight: 400;
+        padding: 10px 14px;
+        line-height: 20px;
+        @extend %basic-transition;
+        &:hover {
+          color: $accent-color;
+        }
+        @media (max-width: $phone) {
+          display: none;
+        }
+        @media (min-width: $phone) {
+          display: inline-block;
+          padding: 18px 22px;
+        }
+      }
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+  button {
+    background-color: $accent-color;
+    @include size(40px, 25px);
+    border-radius: 5px;
+
+    @media (max-width: $phone) {
+      display: inline-block;
+    }
+    @media (min-width: $phone) {
+      display: none;
+    }
+  }
+
+  .show-list {
+    @media (max-width: $phone) {
+      display: block;
+      width: 50px;
+    }
   }
 }
