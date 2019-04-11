@@ -29,16 +29,16 @@ class MobileMenu extends Component {
             });
         }
     }
-
+//TODO add some clas without bottom border when menu on
     render () {
         return(
             <div>
 
-                <button onClick={this.showMenu}>drop</button>
+                <div id="button" onClick={this.showMenu} className={this.state.showMenu ? "mobile-open" : ''}></div>
                 {
                     this.state.showMenu ?
                         (
-                            <div id="menu"
+                            <div id="mobile-menu"
                                  ref={(element) => {
                                      this.dropdownMenu = element;
                                  }}>

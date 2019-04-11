@@ -17,7 +17,7 @@ header {
     margin: 0 100px;
     height: 100px;
     @media (max-width: $tablet) {
-      margin: 0 50px;
+      margin: 0 30px;
     }
     .nav-logo {
       @extend %no-center-float;
@@ -61,39 +61,51 @@ header {
   display: inline-block;
   @extend %float-right;
   @extend %center-vertical;
-  ul {
-    @extend %list-style-none;
-    li {
-      @extend %float-left;
-      @extend %block;
-      a {
-        color: $menu-link-color;
-        font-size: 20px;
-        font-family: $font-family-secondary;
-        font-weight: 400;
-        padding: 10px 14px;
-        line-height: 20px;
-        @extend %basic-transition;
-        &:hover {
-          color: $accent-color;
-        }
-        @media (max-width: $phone) {
-          display: none;
-        }
-        @media (min-width: $phone) {
-          display: inline-block;
-          padding: 18px 22px;
-        }
+  #basic-menu {
+    ul {
+      @media (max-width: $phone) {
+        display: none;
       }
-      i {
-        font-size: 14px;
+      @extend %list-style-none;
+      li {
+        @extend %float-left;
+        @extend %block;
+        a {
+          color: $menu-link-color;
+          font-size: 20px;
+          font-family: $font-family-secondary;
+          font-weight: 400;
+          padding: 10px 14px;
+          line-height: 20px;
+          @extend %basic-transition;
+          &:hover {
+            color: $accent-color;
+          }
+
+          @media (min-width: $phone) {
+            display: inline-block;
+            padding: 18px 22px;
+          }
+        }
+        i {
+          font-size: 14px;
+        }
       }
     }
   }
-  button {
-    background-color: $accent-color;
-    @include size(40px, 25px);
-    border-radius: 5px;
+  .mobile-open {
+    border-bottom: none !important;
+  }
+
+  #button {
+    background: url("../../images/images.png");
+    background-position: center;
+    background-size: cover;
+
+    border-style: solid;
+    border-width: 1px;
+    @include size(60px, 50px);
+    border-radius: 1px;
 
     @media (max-width: $phone) {
       display: inline-block;
@@ -102,11 +114,55 @@ header {
       display: none;
     }
   }
+  #mobile-menu {
+    width: 120px;
+    z-index: -1;
+    height: auto;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    background-color: $basic-background;
+    top: 48px;
+    right: 0px;
+    padding: 4px 0px;
+    ul {
 
-  .show-list {
-    @media (max-width: $phone) {
-      display: block;
-      width: 50px;
+      @media (min-width: $phone) {
+        display: none;
+      }
+      li {
+        width: 100%;
+
+        @extend %basic-transition;
+        &:hover {
+          background-color: $menu-link-color;
+          a {
+            color: $accent-color;
+          }
+        }
+
+        @extend %float-left;
+        @extend %block;
+        a {
+          width: 100%;
+          padding: 5px;
+          color: $menu-link-color;
+          font-size: 18px;
+          font-family: $font-family-secondary;
+          font-weight: 400;
+          line-height: 20px;
+          @extend %basic-transition;
+          &:hover {
+          }
+          @media (min-width: $phone) {
+            display: inline-block;
+            padding: 18px 22px;
+          }
+        }
+        i {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

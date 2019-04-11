@@ -19,7 +19,9 @@ const NavTop = () => {
                         <button id="lang-ang" className="lang"></button>
                     </div>
                     <div className="main-menu-content">
-                        <MenuContent />
+                        <div id="basic-menu">
+                            <MenuContent />
+                        </div>
                         <MobileMenu id="hamburger" />
                     </div>
                 </div>
