@@ -1,48 +1,73 @@
-//
-//
-//.main-menu-content {
-//  display: inline-block;
-//  @extend %float-right;
-//  @extend %center-vertical;
-//  ul {
-//    @extend %list-style-none;
-//    li {
-//      @extend %float-left;
-//      @extend %block;
-//      a {
-//        color: $menu-link-color;
-//        font-size: 20px;
-//        font-family: $font-family-secondary;
-//        font-weight: 400;
-//        padding: 10px 14px;
-//        line-height: 20px;
-//        @extend %basic-transition;
-//        &:hover {
-//          color: $accent-color;
-//        }
-//        @media (max-width: $phone) {
-//          display: none;
-//        }
-//        @media (min-width: $phone) {
-//          display: inline-block;
-//          padding: 18px 22px;
-//        }
-//      }
-//      i {
-//        font-size: 14px;
-//      }
-//    }
-//  }
-//  #hamburger {
-//
-//    @include size(40px, 40px);
-//    background-color: black;
-//
-//    @media (max-width: $phone) {
-//      display: inline-block;
-//    }
-//    @media (min-width: $phone){
-//      display: none;
-//    }
-//  }
-//}
+.main-menu-content {
+  #mobile-menu {
+    width: 120px;
+    z-index: -1;
+    height: auto;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    background-color: $basic-background;
+    top: 48px;
+    right: 0px;
+    padding: 4px 0px;
+    ul {
+
+      @media (min-width: $phone) {
+        display: none;
+      }
+      li {
+        width: 100%;
+
+        @extend %basic-transition;
+        &:hover {
+          background-color: $menu-link-color;
+          a {
+            color: $accent-color;
+          }
+        }
+
+        @extend %float-left;
+        @extend %block;
+        a {
+          width: 100%;
+          padding: 5px;
+          color: $menu-link-color;
+          font-size: 18px;
+          font-family: $font-family-secondary;
+          font-weight: 400;
+          line-height: 20px;
+          @extend %basic-transition;
+          &:hover {
+          }
+          @media (min-width: $phone) {
+            display: inline-block;
+            padding: 18px 22px;
+          }
+        }
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  #button {
+    background: url("../../images/images.png");
+    background-position: center;
+    background-size: cover;
+
+    border-style: solid;
+    border-width: 1px;
+    @include size(60px, 50px);
+    border-radius: 1px;
+
+    @media (max-width: $phone) {
+      display: inline-block;
+    }
+    @media (min-width: $phone) {
+      display: none;
+    }
+  }
+  .mobile-open {
+    border-bottom: none !important;
+  }
+}

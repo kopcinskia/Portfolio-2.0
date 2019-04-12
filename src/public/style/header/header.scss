@@ -1,0 +1,58 @@
+@import 'menu_content';
+@import 'mobile_menu';
+
+/***      header     ***/
+header {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $basic-background;
+  border-bottom: 1px solid $basic-border-color;
+  box-shadow: 0 0 1px $basic-border-color;
+  opacity: 80%;
+  .navbar {
+
+    margin: 0 100px;
+    height: 100px;
+    @media (max-width: $tablet) {
+      margin: 0 30px;
+    }
+    .nav-logo {
+      @extend %no-center-float;
+      @extend %center-vertical;
+      @include size(180px, 60px);
+      z-index: 2;
+      padding: 12px;
+      a{
+        img{
+          background: url('../../images/logoAK.png') no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+    #lang-select {
+      @extend %float-right;
+      @extend %center-vertical;
+      z-index: 2;
+      padding: 24px;
+      #lang-pl {
+        background: url('../../images/pl.png');
+        background-position: center;
+        background-size: cover;
+      }
+      #lang-ang {
+        background: url('../../images/ang.png');
+        background-position: center;
+        background-size: cover;
+      }
+        .lang {
+        border-radius: 10px;
+        margin: 2px;
+        @include size(40px, 30px);
+        background-position: center;
+        }
+    }
+  }
+}

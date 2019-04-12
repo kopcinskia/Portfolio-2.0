@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import MenuContent from './menu_content'
-// import '../../style/header/mobile_menu.scss';
+import '../../../style/main.scss';
 
 class MobileMenu extends Component {
     constructor() {
