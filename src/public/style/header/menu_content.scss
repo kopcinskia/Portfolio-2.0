@@ -21,6 +21,7 @@
           @extend %basic-transition;
           &:hover {
             color: $accent-color;
+            font-size: 25px;
           }
 
           @media (min-width: $phone) {

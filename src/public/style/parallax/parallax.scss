@@ -1,0 +1,29 @@
+%parallax_background {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax {
+  margin: 0px;
+  background-color: #000000;
+
+  height: 600px;
+
+  .text_area {
+
+    p{
+
+    }
+  }
+
+  .fixed-bg {
+    height: 500px;
+  }
+}
+
+.code {
+  @extend %parallax_background;
+  background-image: url('../../images/Cover.jpg');
+}

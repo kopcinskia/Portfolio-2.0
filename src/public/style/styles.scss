@@ -7,6 +7,13 @@ $column-width: 65;
 $gutter-width: 30;
 // TODO zdrób coś z rym tu mogą być bugi                    $total-width: 100%;
 
+
+.content {
+    height: 800px;
+    background-color: yellow;
+}
+
+
 .our-services .single-col {
 @include column(12);
     @media ($phone) {
