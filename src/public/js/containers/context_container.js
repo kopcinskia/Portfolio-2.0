@@ -9,7 +9,7 @@ class ContextContainer extends Component {
             showMe: true
         }
     }
-
+//TODO dodaj akcja do zmieniania stanu reduxa https://www.youtube.com/watch?v=wa1NaL_WWpI
     render() {
         return (
             <section>
