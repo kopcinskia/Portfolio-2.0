@@ -1,0 +1,16 @@
+%context_height {
+  height: 200px;
+}
+
+#home {
+  @extend %context_height;
+  background-color: red;
+}
+#portfolio {
+  @extend %context_height;
+  background-color: blue;
+}
+#contaqct{
+  @extend %context_height;
+  background-color: green;
+}
