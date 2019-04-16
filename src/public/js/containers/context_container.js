@@ -28,7 +28,7 @@ class ContextContainer extends Component {
 }
 function mapStateToProps(state) {
     return {
-        display_content: state.display_content
+        sections: state.sections
     };
 
 }

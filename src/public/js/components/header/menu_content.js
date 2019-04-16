@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+
 import '../../../style/main.scss';
-
-
-
-
-
+import {selectSection} from "../../actions/index";
 
 class MenuContent extends Component {
 
     createListSections() {
-        return this.props.display_content.map((section) => {
+        return this.props.sections.map((section) => {
             return(
-                <li key={section.section_id}><a href="#" lang="pl">{section.section_name}</a></li>
+                <li
+                    key={section.id}
+                    onClick={() => this.props.selectSection(section)}
+
+                >
+                    <a href="#" lang="pl"  >{section.name}</a>
+                </li>
             );
         })
     }
@@ -24,11 +28,16 @@ class MenuContent extends Component {
     }
 };
 
+
 function mapStateToProps(state) {
     return {
-        display_content: state.display_content
+        sections: state.sections
     };
 
 }
 
-export default connect(mapStateToProps)(MenuContent);
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({selectSection: selectSection}, dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(MenuContent);
