@@ -10,6 +10,9 @@ class ContextContainer extends Component {
         }
     }
 //TODO dodaj akcja do zmieniania stanu reduxa https://www.youtube.com/watch?v=wa1NaL_WWpI
+//TODO component_name w danych
+//TODO w akcjach zmieniaj stan
+//TODO w componentach tylko odczytuj
     render() {
         return (
             <section>
