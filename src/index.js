@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-
-import ParallaxContainer from './public/js/components/parallax/parallax_container';
-import NavTop from './public/js/components/header/header';
-import ContextContainer from './public/js/containers/context_container';
+import App from './public/js/app';
 import allReducers from "./public/js/reducers";
 require('./public/style/main.scss');
+import {selectSection} from "./public/js/actions/index";
 
 //TODO podziel html na komponenty reaktowe
 //TODO sprawdź co tam się wyswietla
@@ -22,12 +20,7 @@ const store = createStore(allReducers);
 
 ReactDOM.render(
         <Provider store={store}>
-            <div>
-                <ParallaxContainer class_img_name='code' some_text='some TEXT'/>
-                <NavTop />
-                <ContextContainer />
-                <div className="content">This div is only here to enable scrolling (height = 800 pixels).</div>
-            </div>
+            <App />
         </Provider>,
     document.getElementById('root')
 );

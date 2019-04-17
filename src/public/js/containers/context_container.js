@@ -3,37 +3,47 @@ import {connect} from 'react-redux';
 
 class ContextContainer extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            showMe: true
-        }
-    }
 //TODO dodaj akcja do zmieniania stanu reduxa https://www.youtube.com/watch?v=wa1NaL_WWpI
 //TODO component_name w danych
-//TODO w akcjach zmieniaj stan
+//TODO reducerach zmieniaj stan
 //TODO w componentach tylko odczytuj
+//TODO zainplementuj rozpakowywanie stanu w contenerach!!!!!
+
+    sectionGenerator() {
+        this.props.sections.sectionsList.map((section) => {
+            if(section.displayStatus === false) return null;
+            return (
+                <div id={section.name} >bbb</div>
+            )
+        })
+    }
+
     render() {
+        console.log('RENDER')
         return (
             <section>
                 <div id="context_container">
+                    {
+                        this.props.sections.sectionsList.map((section) => {
+                            console.log(section, "rerender!")
+                            if(section.displayStatus === false) return null;
+                            return (
+                                <div id={section.name} >bbb</div>
+                            )
+                        })
+                    }
 
-                    <div id="home"/>
-
-                    <div id="portfolio"/>
-
-                    <div id="contact"/>
 
                 </div>
             </section>
         )
     }
 }
-function mapStateToProps(state) {
+function mapState(state) {
     return {
         sections: state.sections
     };
 
 }
 
-export default connect(mapStateToProps)(ContextContainer);
+export default connect(mapState)(ContextContainer);

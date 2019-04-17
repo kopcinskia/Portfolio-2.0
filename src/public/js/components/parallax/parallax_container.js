@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 
 class ParallaxContainer extends Component {
+    //TODO wyśrodkuj text paralaxy
 
     render() {
         let class_custom_name = 'fixed-bg ' + this.props.class_img_name;

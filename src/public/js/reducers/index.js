@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import DisplayContentReducer from './reducer_sections_data';
-import ActiveUserReducer from './reducer_active_section';
+import SectionsReducer from './reducer_active_section';
 
 const allReducers = combineReducers({
-    sections: DisplayContentReducer,
-    activeSection: ActiveUserReducer
+    sections: SectionsReducer
 });
 
 export default allReducers;

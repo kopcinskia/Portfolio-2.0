@@ -1,8 +1,30 @@
-export default function (state=null, action) {
+const initialState = {
+    sectionsList: [
+        {
+            id: 1,
+            name: 'home',
+            displayStatus: false,
+        },
+        {
+            id: 2,
+            name: 'portfolio',
+            displayStatus: false,
+        },
+        {
+            id: 3,
+            name: 'contact',
+            displayStatus: false,
+        },
+    ],
+};
+
+export default function (state=initialState, action) {
     switch(action.type) {
-        case "SECTION_SELECTED":
-            action.payload.display_status = true;
-            return action.payload;
+        case "DISPLAY_SELECTED_SECTION":
+            state.sectionsList.map((section) => {
+                section.id === action.sectionToDisplay.id ? section.displayStatus = true : section.displayStatus = false;
+            });
+            return state;
             break;
     }
     return state;
