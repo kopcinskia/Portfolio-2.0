@@ -1,6 +1,6 @@
 import React from 'react';
 import MobileMenu from './mobile_menu'
-import MenuContent from './menu_content'
+import MenuContent from '../../containers/container_menu_content'
 import '../../../style/main.scss';
 
 const NavTop = () => {

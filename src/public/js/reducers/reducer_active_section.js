@@ -8,7 +8,7 @@ const initialState = {
         {
             id: 2,
             name: 'portfolio',
-            displayStatus: false,
+            displayStatus: true,
         },
         {
             id: 3,

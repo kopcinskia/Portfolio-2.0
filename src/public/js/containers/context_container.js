@@ -28,7 +28,7 @@ class ContextContainer extends Component {
                             console.log(section, "rerender!")
                             if(section.displayStatus === false) return null;
                             return (
-                                <div id={section.name} >bbb</div>
+                                <div key={section.name} id={section.name} >bbb</div>
                             )
                         })
                     }
