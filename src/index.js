@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import App from './public/js/app';
-import allReducers from "./public/js/reducers";
+import allReducers from "./public/js/reducers/index";
 require('./public/style/main.scss');
-import {selectSection} from "./public/js/actions/index";
 
 //TODO podziel html na komponenty reaktowe
 //TODO sprawdź co tam się wyswietla
