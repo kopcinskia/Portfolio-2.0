@@ -22,7 +22,7 @@ class MenuContent extends Component {
                     key={section.id}
                     onClick={() => this.changeDisplayedSection(section)}
                 >
-                    <a href="#" lang="pl"  >{section.name}</a>
+                    <a lang="pl"  >{section.name}</a>
 
                 </li>
 
