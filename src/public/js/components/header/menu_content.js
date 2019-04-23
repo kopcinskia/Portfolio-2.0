@@ -2,39 +2,33 @@ import React, { Component } from 'react'
 import '../../../style/main.scss';
 
 class MenuContent extends Component {
-    constructor() {
-        super()
 
-        this.changeDisplayedSection = this.changeDisplayedSection.bind(this);
-    }
-
-    //TODO rename to handle
-    changeDisplayedSection(section) {
+    handleChangeDisplayedSection = (section) => {
         this.props.selectSection(section);
-    }
+    };
 
+    createListSections = () => {
 
-    createListSections() {
         return this.props.sections.map((section) => {
 
             return(
                 <li
                     key={section.id}
-                    onClick={() => this.changeDisplayedSection(section)}
+                    onClick={() => this.handleChangeDisplayedSection(section)}
                 >
-                    <a lang="pl"  >{section.name}</a>
+                    <a href="#" lang="pl"  >{section.name}</a>
 
                 </li>
 
             );
         })
-    }
+    };
 
     render() {
         return (<ul>
             {this.createListSections()}
         </ul>)
     }
-};
+}
 
 export default MenuContent;

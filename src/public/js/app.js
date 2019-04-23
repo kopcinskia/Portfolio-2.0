@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import ParallaxContainer from './components/parallax/parallax_container';
 import NavTop from './components/header/header';
-import ContextContainer from './containers/context_container';
+import ContextContainer from './containers/container_selected_section';
 
 class App extends Component {
     render() {
