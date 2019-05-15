@@ -1,600 +1,600 @@
-////TODO Weź to podziel bo żal patrzeć
-@import 'helpers';
-
-// MEDIA QUERIES
-$columns: 12;
-$column-width: 65;
-$gutter-width: 30;
-// TODO zdrób coś z rym tu mogą być bugi                    $total-width: 100%;
-
-
-.content {
-    height: 800px;
-    background-color: yellow;
-}
-
-
-.our-services .single-col {
-@include column(12);
-    @media ($phone) {
-    @include column(6);
-}
-    @media ($tablet) {
-    @include column(3);
-}
-}
-
-.skills .single-col {
-@include column(6);
-    @media ($phone) {
-    @include column(3);
-}
-    @media ($tablet) {
-    @include column(2);
-}
-}
-
-.advanteges .single-col {
-@include column(12);
-    @media ($phone) {
-    @include column(6);
-}
-    @media ($tablet) {
-    @include column(4);
-}
-}
-
-.statistics .single-col {
-@include column(12);
-    @media ($phone) {
-    @include column(6);
-}
-    @media ($tablet) {
-    @include column(3);
-}
-}
-
-// Container
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    clear: both;
-    padding: 0 15px;
-}
-
-//img & a
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-a {
-    text-decoration: none;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-// tytitles sekctions
-.aside-title {
-    margin-bottom: 40px;
-    @extend %center-text;
-    p{
-        font-size: 22px;
-    }
-}
-
-// headers
-h1, h2, h3, p {
-    line-height: 1.2;
-}
-
-// mixin for buttons
-@mixin basic-button($color, $background-color) {
-    color: $color;
-    background-color: $background-color;
-    text-decoration: none;
-    @extend %inline-block;
-    font-style: $basic-font-size;
-    font-weight: 250;
-    line-height: $basic-line-height;
-    text-transform: uppercase;
-}
-
-// all page
-
-// Main Slider
-.bxslider {
-    .main-slide-1 {
-        //background-image: url('../images/20170319_164227.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        &:after {
-            @extend %dark-overlay;
-        }
-    }
-    .main-slide-2 {
-        //background-image: url('../images/20170317_153849.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 0 0;
-        &:after {
-            @extend %dark-overlay;
-        }
-    }
-}
-
-// img in slider
-.bx-viewport {
-    img {
-    @extend %invisible;
-        @media ($tablet) {
-        display: block; //@extend %block;
-        position: absolute;
-        right: 5%;
-        top: 20%;
-    }
-    }
-}
-
-// content slide
-.main-slider-content {
-    padding: 15% 10%;
-    color: $brightest-text-color;
-    position: relative;
-    z-index: 1;
-    @media ($tablet) {
-    padding: 15% 4%;
-}
-    h1 {
-        font-size: 54px;
-        line-height: 64px;
-        font-weight: 400;
-        @media ($tablet) {
-        font-size: 46px;
-        line-height: 60px;
-    }
-    }
-    p {
-        color: $brightest-text-color;
-        margin-top: 10px;
-        font-size: 32px;
-        line-height: 42px;
-        @media ($tablet) {
-        font-size: 18px;
-    }
-    }
-    a {
-        font-size: 24px;
-        position: relative;
-        @include basic-button($brightest-text-color, none);
-        margin: 12px 0;
-        padding: 20px 36px;
-        border: 2px solid $brightest-text-color;
-        @extend %basic-transition;
-        &:hover {
-            background-color: $accent-color;
-            @media ($tablet) {
-        }
-        }
-    }
-}
-
-//// What we do?
-.our-services {
-    padding: 60px 80px;
-    @extend %overflow-fix;
-    .single-col {
-        min-height: 400px;
-        margin-bottom: 5px;
-    @extend %center-text;
-        span {
-            @extend %inline-block;
-            @include size(150px, 150px);
-            background-color: $alternative-background;
-            @extend %center-text;
-            @include border-radius-single(50%);
-            margin-bottom: 30px;
-            @extend %basic-transition;
-            &:hover {
-                background-color: $accent-color;
-            }
-            &:hover>i {
-                color: $brightest-text-color;
-                cursor: default;
-            }
-            i {
-                color: $accent-color;
-                font-size: 70px;
-                line-height: 150px
-            }
-        }
-        h3{
-            margin-bottom: 14px;
-        }
-        @media ($tablet) {
-        margin-bottom: 0;
-    }
-    }
-}
-
-//// Portfolio
-.portfolio {
-    padding: 80px 0;
-    @include section-border-top;
-    .owl-controls {
-        margin-top: 60px;
-    }
-}
-
-.portfolio-item {
-    width: 100%;
-    cursor: move;
-    img {
-        width: 100%;
-    }
-    &:hover .portfolio-hover {
-        opacity: 1;
-    }
-    &:hover h3 {
-        @include translate3d(0%, 0%, 0%);
-    }
-    &:hover p {
-        @include translate3d(0%, 0%, 0%);
-    }
-    &:hover a {
-        @include translate3d(0%, 0%, 0%);
-    }
-}
-
-.portfolio-hover {
-    @extend %absolute-one-hundred-size;
-    @extend %center-text;
-    @extend %basic-transition;
-    owerflow: hidden;
-    background-color: $box-portfolio-background;
-    opacity: 0;
-}
-
-.portfolio-hover-inner {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    h3 {
-        @include header-mixin(32px, 16px, $basic-background);
-        @include translate3d(0%, -400%, 0%);
-        @include variable-transition(0.8s);
-    }
-    p {
-        color: $basic-background;
-        margin: 20px 0;
-        @include translate3d(0%, -400%, 0%);
-        @include variable-transition(0.8s);
-    }
-    a {
-        @extend %inline-block;
-        @include size(70px, 70px);
-        @include border-radius-single(50%);
-        border: 2px solid $basic-background;
-        @extend %center-text;
-        margin: 0 5px;
-        @include translate3d(0%, 400%, 0%);
-        @include variable-transition(0.8s);
-    i {
-        line-height: 70px;
-        font-size: 40px;
-        color: $basic-background;
-        @extend %basic-transition;
-    }
-        &:hover {
-            background-color: $basic-background;
-        }
-        &:hover i {
-            color: $accent-color;
-        }
-    }
-    a.portfolio-link-left {
-        @include variable-transition(0.4s);
-    }
-    a.portfolio-link-right {
-        @include variable-transition(0.6s);
-    }
-}
-
-////skills
-#skills {
-    padding: 120px 20px;
-    @include section-border-top;
-    @extend %clearfix;
-    .single-col {
-        margin-bottom: 30px;
-        @extend %center-text;
-        img {
-            @include size(150px, 150px);
-            margin: 0 auto;
-            @extend %block;
-            @extend %center-no-float;
-        }
-        .services-content {
-            margin-left: 0;
-        }
-    }
-}
-
-////Section video
-.section-video {
-@extend %invisible;
-    position: relative;
-    .container {
-        padding: 175px 0;
-        z-index: 2;
-    }
-    @media ($desktop) {
-    display: block // @extend %block;
-}
-}
-
-#movie {
-    @include size(100%, 100%);
-&:after {
-    @extend %dark-overlay;
-}
-}
+//////TODO Weź to podziel bo żal patrzeć
+//@import 'helpers';
 //
-//// video line
-.video-ilne {
-    @extend %center-text;
-    h2 {
-        @include header-mixin(48px, 26px, $brightest-text-color);
-        position: relative;
-    }
-}
-//// Advantages
-.advanteges {
-    padding: 50px 30px;
-    @include section-border-top;
-    @extend %clearfix;
-    .single-col {
-    @extend %center-text;
-        margin-bottom: 30px;
-        min-height: 250px;
-        @media ($desktop) {
-            min-height: 120px;
-        }
-        span {
-            @extend %block;
-            @extend %center-no-float;
-            margin: 20px 0;
-            i {
-                font-size: 70px;
-                color: $accent-color;
-            }
-            @media ($phone) {
-                display: inline-table; //@extend %inline-block;
-                text-align: initial;
-                margin-bottom: 0;
-            }
-        }
-        .services-content {
-            margin-left: 0px;
-            padding-left: 15px;
-            @media ($phone) {
-            margin-left: 70px;
-        }
-        }
-        @media ($phone) {
-        text-align: left;
-    }
-    }
-}
-
-//// Statystcs
-.statistics {
-    background-color: $alternative-background;
-    @extend %overflow-fix;
-    padding: 80px 0;
-    .single-col {
-        @extend %center-text;
-        .statistics-content {
-            margin-bottom: 20px;
-            h3 {
-                font-size: 60px;
-                color: $accent-color;
-                margin: 0;
-            }
-        }
-    }
-}
-//
-//// Paralax
-.photo-banner {
-    @extend %center-text;
-    //background: url(../images/Cover.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    .photo-banner-inner {
-        position: relative;
-        z-index: 0;
-        &:after {
-            @extend %dark-overlay;
-        }
-        .container {
-            position: relative;
-            z-index: 1;
-            padding: 170px 0;
-        }
-        @extend %center-text;
-        h2 {
-            @include header-mixin(48px, 26px, $brightest-text-color);
-            position: relative;
-        }
-        a {
-            font-size: 20px;
-            position: relative;
-            @include basic-button($brightest-text-color, $accent-color);
-            padding: 18px 38px;
-            margin: 8px 0;
-            @extend %basic-transition;
-            &:hover {
-                @include basic-button($accent-color, $brightest-text-color);
-            }
-        }
-    }
-}
-//
-//// About me
-.our-team {
-    padding: 80px 0 0 0;
-    @extend %center-text;
-    @include section-border-bottom;
-    @extend %overflow-fix;
-    .single-col {
-        margin: 20px;
-    }
-}
-//
-.team-members {
-    @extend %overflow-fix;
-    margin-bottom: 40px;
-}
-//
-.team-member {
-    @extend %center-text;
-    img {
-        margin-bottom: 30px;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-    }
-    span {
-        line-height: 24px;
-        margin: 0 0 17px 0;
-        @extend %inline-block
-    }
-}
-
-.members-social {
-    @extend %list-style-none;
-    li {
-        @extend %inline-block;
-        margin-right: 18px;
-        i {
-            font-size: 35px;
-            color: darken($alternative-background, 20%);
-            @extend %basic-transition;
-            &:hover {
-                color: darken($alternative-background, 10%)
-            }
-        }
-    }
-}
+//// MEDIA QUERIES
+//$columns: 12;
+//$column-width: 65;
+//$gutter-width: 30;
+//// TODO zdrób coś z rym tu mogą być bugi                    $total-width: 100%;
 //
 //
-//// info
-.section-info-text {
-    background-color: $accent-color;
-    padding: 60px 0;
-    @extend %center-text;
-    h2 {
-        font-size: 40px;
-        color: $brightest-text-color;
-        margin-bottom: 0;
-        display: inline-table;
-    }
-    a {
-        font-size: 22px;
-        @include basic-button($brightest-text-color, $accent-color);
-        margin: 8px 20px;
-        padding: 15px 40px;
-        border: 2px solid $brightest-text-color;
-        @include border-radius-single(2px);
-        @extend %basic-transition;
-        &:hover {
-            color: $accent-color;
-            background-color: $brightest-text-color;
-        }
-    }
-}
-////Hiden CV PAnel
-#info {
-    position: absolute;
-    background: rgba(200, 200, 200, 0.6);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    display: none;
-    z-index: 10000000000;
-    #send-email {
-        position: absolute;
-        background: $basic-background;
-        width: 600px;
-        height: auto;
-        top: 100px;
-        right: 0;
-        left: 0;
-        border: 1px solid $basic-background;
-        border-radius: 30px;
-        display: block;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
-        .close {
-            position: absolute;
-            color: #45af96;
-            right: -10px;
-            top: -18px;
-        }
-        img {
-            margin: 10px;
-            padding: 10px;
-            height: 300px;
-        }
-        a.button {
-            color: $basic-background;
-            background-color: $accent-color;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 400;
-            line-height: 24px;
-            text-transform: uppercase;
-            margin: 10px auto;
-            padding: 10px 30px;
-            border: 2px solid $basic-background;
-            border-radius: 2px;
-            -moz-border-radius: 2px;
-            -webkit-border-radius: 2px;
-            transition: all 0.4s ease-in-out;
-            &:hover {
-                color: $accent-color;
-                background-color: $basic-background;
-                border: 2px solid $accent-color;
-            }
-        }
-    }
-}
-////fix for Slider
-.bx-viewport {
-    min-height: 100px;
-}
-//// FOOTER
-// footer - copyright
-.copyright {
-    padding: 20px;
-    text-align: center;
-    background-color: $footer-copyright-background;
-    border: 1px solid $footer-social-borders;
-    p {
-        font-size: 24px;
-        color: $basic-text-color;
-        margin: 0;
-        a {
-            color: $bright-text-color;
-        }
-    }
-}
+//.content {
+//    height: 800px;
+//    background-color: yellow;
+//}
+//
+//
+//.our-services .single-col {
+//@include column(12);
+//    @media ($phone) {
+//    @include column(6);
+//}
+//    @media ($tablet) {
+//    @include column(3);
+//}
+//}
+//
+//.skills .single-col {
+//@include column(6);
+//    @media ($phone) {
+//    @include column(3);
+//}
+//    @media ($tablet) {
+//    @include column(2);
+//}
+//}
+//
+//.advanteges .single-col {
+//@include column(12);
+//    @media ($phone) {
+//    @include column(6);
+//}
+//    @media ($tablet) {
+//    @include column(4);
+//}
+//}
+//
+//.statistics .single-col {
+//@include column(12);
+//    @media ($phone) {
+//    @include column(6);
+//}
+//    @media ($tablet) {
+//    @include column(3);
+//}
+//}
+//
+//// Container
+//.container {
+//    max-width: 1200px;
+//    margin: 0 auto;
+//    clear: both;
+//    padding: 0 15px;
+//}
+//
+////img & a
+//img {
+//    max-width: 100%;
+//    vertical-align: middle;
+//}
+//
+//a {
+//    text-decoration: none;
+//}
+//
+//* {
+//    box-sizing: border-box;
+//}
+//
+//// tytitles sekctions
+//.aside-title {
+//    margin-bottom: 40px;
+//    @extend %center-text;
+//    p{
+//        font-size: 22px;
+//    }
+//}
+//
+//// headers
+//h1, h2, h3, p {
+//    line-height: 1.2;
+//}
+//
+//// mixin for buttons
+//@mixin basic-button($color, $background-color) {
+//    color: $color;
+//    background-color: $background-color;
+//    text-decoration: none;
+//    @extend %inline-block;
+//    font-style: $basic-font-size;
+//    font-weight: 250;
+//    line-height: $basic-line-height;
+//    text-transform: uppercase;
+//}
+//
+//// all page
+//
+//// Main Slider
+//.bxslider {
+//    .main-slide-1 {
+//        //background-image: url('../images/20170319_164227.jpg');
+//        background-size: cover;
+//        background-repeat: no-repeat;
+//        background-position: bottom;
+//        &:after {
+//            @extend %dark-overlay;
+//        }
+//    }
+//    .main-slide-2 {
+//        //background-image: url('../images/20170317_153849.jpg');
+//        background-size: cover;
+//        background-repeat: no-repeat;
+//        background-position: 0 0;
+//        &:after {
+//            @extend %dark-overlay;
+//        }
+//    }
+//}
+//
+//// img in slider
+//.bx-viewport {
+//    img {
+//    @extend %invisible;
+//        @media ($tablet) {
+//        display: block; //@extend %block;
+//        position: absolute;
+//        right: 5%;
+//        top: 20%;
+//    }
+//    }
+//}
+//
+//// content slide
+//.main-slider-content {
+//    padding: 15% 10%;
+//    color: $brightest-text-color;
+//    position: relative;
+//    z-index: 1;
+//    @media ($tablet) {
+//    padding: 15% 4%;
+//}
+//    h1 {
+//        font-size: 54px;
+//        line-height: 64px;
+//        font-weight: 400;
+//        @media ($tablet) {
+//        font-size: 46px;
+//        line-height: 60px;
+//    }
+//    }
+//    p {
+//        color: $brightest-text-color;
+//        margin-top: 10px;
+//        font-size: 32px;
+//        line-height: 42px;
+//        @media ($tablet) {
+//        font-size: 18px;
+//    }
+//    }
+//    a {
+//        font-size: 24px;
+//        position: relative;
+//        @include basic-button($brightest-text-color, none);
+//        margin: 12px 0;
+//        padding: 20px 36px;
+//        border: 2px solid $brightest-text-color;
+//        @extend %basic-transition;
+//        &:hover {
+//            background-color: $accent-color;
+//            @media ($tablet) {
+//        }
+//        }
+//    }
+//}
+//
+////// What we do?
+//.our-services {
+//    padding: 60px 80px;
+//    @extend %overflow-fix;
+//    .single-col {
+//        min-height: 400px;
+//        margin-bottom: 5px;
+//    @extend %center-text;
+//        span {
+//            @extend %inline-block;
+//            @include size(150px, 150px);
+//            background-color: $alternative-background;
+//            @extend %center-text;
+//            @include border-radius-single(50%);
+//            margin-bottom: 30px;
+//            @extend %basic-transition;
+//            &:hover {
+//                background-color: $accent-color;
+//            }
+//            &:hover>i {
+//                color: $brightest-text-color;
+//                cursor: default;
+//            }
+//            i {
+//                color: $accent-color;
+//                font-size: 70px;
+//                line-height: 150px
+//            }
+//        }
+//        h3{
+//            margin-bottom: 14px;
+//        }
+//        @media ($tablet) {
+//        margin-bottom: 0;
+//    }
+//    }
+//}
+//
+////// Portfolio
+//.portfolio {
+//    padding: 80px 0;
+//    @include section-border-top;
+//    .owl-controls {
+//        margin-top: 60px;
+//    }
+//}
+//
+//.portfolio-item {
+//    width: 100%;
+//    cursor: move;
+//    img {
+//        width: 100%;
+//    }
+//    &:hover .portfolio-hover {
+//        opacity: 1;
+//    }
+//    &:hover h3 {
+//        @include translate3d(0%, 0%, 0%);
+//    }
+//    &:hover p {
+//        @include translate3d(0%, 0%, 0%);
+//    }
+//    &:hover a {
+//        @include translate3d(0%, 0%, 0%);
+//    }
+//}
+//
+//.portfolio-hover {
+//    @extend %absolute-one-hundred-size;
+//    @extend %center-text;
+//    @extend %basic-transition;
+//    owerflow: hidden;
+//    background-color: $box-portfolio-background;
+//    opacity: 0;
+//}
+//
+//.portfolio-hover-inner {
+//    position: absolute;
+//    width: 100%;
+//    top: 50%;
+//    transform: translateY(-50%);
+//    h3 {
+//        @include header-mixin(32px, 16px, $basic-background);
+//        @include translate3d(0%, -400%, 0%);
+//        @include variable-transition(0.8s);
+//    }
+//    p {
+//        color: $basic-background;
+//        margin: 20px 0;
+//        @include translate3d(0%, -400%, 0%);
+//        @include variable-transition(0.8s);
+//    }
+//    a {
+//        @extend %inline-block;
+//        @include size(70px, 70px);
+//        @include border-radius-single(50%);
+//        border: 2px solid $basic-background;
+//        @extend %center-text;
+//        margin: 0 5px;
+//        @include translate3d(0%, 400%, 0%);
+//        @include variable-transition(0.8s);
+//    i {
+//        line-height: 70px;
+//        font-size: 40px;
+//        color: $basic-background;
+//        @extend %basic-transition;
+//    }
+//        &:hover {
+//            background-color: $basic-background;
+//        }
+//        &:hover i {
+//            color: $accent-color;
+//        }
+//    }
+//    a.portfolio-link-left {
+//        @include variable-transition(0.4s);
+//    }
+//    a.portfolio-link-right {
+//        @include variable-transition(0.6s);
+//    }
+//}
+//
+//////skills
+//#skills {
+//    padding: 120px 20px;
+//    @include section-border-top;
+//    @extend %clearfix;
+//    .single-col {
+//        margin-bottom: 30px;
+//        @extend %center-text;
+//        img {
+//            @include size(150px, 150px);
+//            margin: 0 auto;
+//            @extend %block;
+//            @extend %center-no-float;
+//        }
+//        .services-content {
+//            margin-left: 0;
+//        }
+//    }
+//}
+//
+//////Section video
+//.section-video {
+//@extend %invisible;
+//    position: relative;
+//    .container {
+//        padding: 175px 0;
+//        z-index: 2;
+//    }
+//    @media ($desktop) {
+//    display: block // @extend %block;
+//}
+//}
+//
+//#movie {
+//    @include size(100%, 100%);
+//&:after {
+//    @extend %dark-overlay;
+//}
+//}
+////
+////// video line
+//.video-ilne {
+//    @extend %center-text;
+//    h2 {
+//        @include header-mixin(48px, 26px, $brightest-text-color);
+//        position: relative;
+//    }
+//}
+////// Advantages
+//.advanteges {
+//    padding: 50px 30px;
+//    @include section-border-top;
+//    @extend %clearfix;
+//    .single-col {
+//    @extend %center-text;
+//        margin-bottom: 30px;
+//        min-height: 250px;
+//        @media ($desktop) {
+//            min-height: 120px;
+//        }
+//        span {
+//            @extend %block;
+//            @extend %center-no-float;
+//            margin: 20px 0;
+//            i {
+//                font-size: 70px;
+//                color: $accent-color;
+//            }
+//            @media ($phone) {
+//                display: inline-table; //@extend %inline-block;
+//                text-align: initial;
+//                margin-bottom: 0;
+//            }
+//        }
+//        .services-content {
+//            margin-left: 0px;
+//            padding-left: 15px;
+//            @media ($phone) {
+//            margin-left: 70px;
+//        }
+//        }
+//        @media ($phone) {
+//        text-align: left;
+//    }
+//    }
+//}
+//
+////// Statystcs
+//.statistics {
+//    background-color: $alternative-background;
+//    @extend %overflow-fix;
+//    padding: 80px 0;
+//    .single-col {
+//        @extend %center-text;
+//        .statistics-content {
+//            margin-bottom: 20px;
+//            h3 {
+//                font-size: 60px;
+//                color: $accent-color;
+//                margin: 0;
+//            }
+//        }
+//    }
+//}
+////
+////// Paralax
+//.photo-banner {
+//    @extend %center-text;
+//    //background: url(../images/Cover.jpg) no-repeat center center fixed;
+//    -webkit-background-size: cover;
+//    -moz-background-size: cover;
+//    -o-background-size: cover;
+//    background-size: cover;
+//    .photo-banner-inner {
+//        position: relative;
+//        z-index: 0;
+//        &:after {
+//            @extend %dark-overlay;
+//        }
+//        .container {
+//            position: relative;
+//            z-index: 1;
+//            padding: 170px 0;
+//        }
+//        @extend %center-text;
+//        h2 {
+//            @include header-mixin(48px, 26px, $brightest-text-color);
+//            position: relative;
+//        }
+//        a {
+//            font-size: 20px;
+//            position: relative;
+//            @include basic-button($brightest-text-color, $accent-color);
+//            padding: 18px 38px;
+//            margin: 8px 0;
+//            @extend %basic-transition;
+//            &:hover {
+//                @include basic-button($accent-color, $brightest-text-color);
+//            }
+//        }
+//    }
+//}
+////
+////// About me
+//.our-team {
+//    padding: 80px 0 0 0;
+//    @extend %center-text;
+//    @include section-border-bottom;
+//    @extend %overflow-fix;
+//    .single-col {
+//        margin: 20px;
+//    }
+//}
+////
+//.team-members {
+//    @extend %overflow-fix;
+//    margin-bottom: 40px;
+//}
+////
+//.team-member {
+//    @extend %center-text;
+//    img {
+//        margin-bottom: 30px;
+//        width: 300px;
+//        height: 300px;
+//        border-radius: 50%;
+//    }
+//    span {
+//        line-height: 24px;
+//        margin: 0 0 17px 0;
+//        @extend %inline-block
+//    }
+//}
+//
+//.members-social {
+//    @extend %list-style-none;
+//    li {
+//        @extend %inline-block;
+//        margin-right: 18px;
+//        i {
+//            font-size: 35px;
+//            color: darken($alternative-background, 20%);
+//            @extend %basic-transition;
+//            &:hover {
+//                color: darken($alternative-background, 10%)
+//            }
+//        }
+//    }
+//}
+////
+////
+////// info
+//.section-info-text {
+//    background-color: $accent-color;
+//    padding: 60px 0;
+//    @extend %center-text;
+//    h2 {
+//        font-size: 40px;
+//        color: $brightest-text-color;
+//        margin-bottom: 0;
+//        display: inline-table;
+//    }
+//    a {
+//        font-size: 22px;
+//        @include basic-button($brightest-text-color, $accent-color);
+//        margin: 8px 20px;
+//        padding: 15px 40px;
+//        border: 2px solid $brightest-text-color;
+//        @include border-radius-single(2px);
+//        @extend %basic-transition;
+//        &:hover {
+//            color: $accent-color;
+//            background-color: $brightest-text-color;
+//        }
+//    }
+//}
+//////Hiden CV PAnel
+//#info {
+//    position: absolute;
+//    background: rgba(200, 200, 200, 0.6);
+//    width: 100%;
+//    height: 100%;
+//    position: fixed;
+//    top: 0;
+//    display: none;
+//    z-index: 10000000000;
+//    #send-email {
+//        position: absolute;
+//        background: $basic-background;
+//        width: 600px;
+//        height: auto;
+//        top: 100px;
+//        right: 0;
+//        left: 0;
+//        border: 1px solid $basic-background;
+//        border-radius: 30px;
+//        display: block;
+//        margin: 0 auto;
+//        padding: 20px;
+//        text-align: center;
+//        .close {
+//            position: absolute;
+//            color: #45af96;
+//            right: -10px;
+//            top: -18px;
+//        }
+//        img {
+//            margin: 10px;
+//            padding: 10px;
+//            height: 300px;
+//        }
+//        a.button {
+//            color: $basic-background;
+//            background-color: $accent-color;
+//            text-decoration: none;
+//            display: inline-block;
+//            font-weight: 400;
+//            line-height: 24px;
+//            text-transform: uppercase;
+//            margin: 10px auto;
+//            padding: 10px 30px;
+//            border: 2px solid $basic-background;
+//            border-radius: 2px;
+//            -moz-border-radius: 2px;
+//            -webkit-border-radius: 2px;
+//            transition: all 0.4s ease-in-out;
+//            &:hover {
+//                color: $accent-color;
+//                background-color: $basic-background;
+//                border: 2px solid $accent-color;
+//            }
+//        }
+//    }
+//}
+//////fix for Slider
+//.bx-viewport {
+//    min-height: 100px;
+//}
+////// FOOTER
+//// footer - copyright
+//.copyright {
+//    padding: 20px;
+//    text-align: center;
+//    background-color: $footer-copyright-background;
+//    border: 1px solid $footer-social-borders;
+//    p {
+//        font-size: 24px;
+//        color: $basic-text-color;
+//        margin: 0;
+//        a {
+//            color: $bright-text-color;
+//        }
+//    }
+//}

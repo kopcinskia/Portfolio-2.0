@@ -1,14 +1,14 @@
 .main-menu-content {
   #mobile-menu {
-    width: 120px;
+    width: 50vw;
+    height: 90vh;
     z-index: -1;
-    height: auto;
     position: absolute;
     border-style: solid;
     border-width: 1px;
     background-color: $basic-background;
     top: 48px;
-    right: 0px;
+    left: 0px;
     padding: 4px 0px;
     ul {
 
