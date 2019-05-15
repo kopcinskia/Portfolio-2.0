@@ -10,7 +10,7 @@ class MobileMenu extends Component {
             showMenu: false,
         };
     }
-//TODO Animacje i settimeout
+
     handleShowMenu = (event) => {
         event.preventDefault();
 
@@ -19,11 +19,13 @@ class MobileMenu extends Component {
         })
     };
 
+//TODO Animacje i settimeout  add out animate and configure timegit co
     handleCloseMenu = (event) => {
         if (!this.dropdownMenu.contains(event.target)) {
-            this.setState({showMenu: false}, () => {
-                document.removeEventListener('click', this.handleCloseMenu);
-            });
+            setTimeout(() => {
+                this.setState({showMenu: false}, () => {
+                    document.removeEventListener('click', this.handleCloseMenu);
+                })}, 1000)
         }
     };
 
