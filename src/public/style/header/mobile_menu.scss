@@ -17,12 +17,19 @@
 }
 
 .main-menu-content {
+  .slide-off{
+    transition: opacity 0.25s ease;
+    animation: mobile-menu-slide-off 0.4s;
+
+  }
+  .slide-on{
+    transition: opacity 0.25s ease;
+    animation: mobile-menu-slide-on 0.4s;
+  }
 
 
   #mobile-menu {
 
-    transition: opacity 0.25s ease;
-    animation: mobile-menu-slide-on 0.4s;
     box-shadow: 0 0 10px #000;
     width: 50vw;
     height: 90vh;
@@ -34,12 +41,6 @@
     top: 48px;
     left: 0px;
     padding: 4px 0px;
-
-    &:after{
-      transition: opacity 0.25s ease;
-      animation: mobile-menu-slide-off 0.4s;
-    }
-
     ul {
 
       @media (min-width: $phone) {

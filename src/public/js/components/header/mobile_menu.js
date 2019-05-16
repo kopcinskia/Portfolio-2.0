@@ -8,12 +8,13 @@ class MobileMenu extends Component {
 
         this.state = {
             showMenu: false,
+            slideOff: ''
         };
     }
 
     handleShowMenu = (event) => {
         event.preventDefault();
-
+        this.setState({slideOff: 'slide-on'});
         this.setState({showMenu: true}, () => {
             document.addEventListener('click', this.handleCloseMenu)
         })
@@ -22,10 +23,12 @@ class MobileMenu extends Component {
 //TODO Animacje i settimeout  add out animate and configure timegit co
     handleCloseMenu = (event) => {
         if (!this.dropdownMenu.contains(event.target)) {
+            this.setState({slideOff: 'slide-off'});
             setTimeout(() => {
                 this.setState({showMenu: false}, () => {
                     document.removeEventListener('click', this.handleCloseMenu);
-                })}, 1000)
+                })}, 380)
+
         }
     };
 
@@ -36,7 +39,7 @@ class MobileMenu extends Component {
                 {
                     this.state.showMenu ?
                         (
-                            <div id="mobile-menu"
+                            <div id="mobile-menu" className={this.state.slideOff}
                                  ref={(element) => {
                                      this.dropdownMenu = element;
                                  }}>
