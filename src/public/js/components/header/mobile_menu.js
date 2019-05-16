@@ -35,7 +35,11 @@ class MobileMenu extends Component {
     render () {
         return(
             <div>
-                <div id="button" onClick={this.handleShowMenu} className={this.state.showMenu ? "mobile-open" : ''} />
+                <div id="hamburger" onClick={this.handleShowMenu} className={this.state.showMenu ? "mobile-open" : ''}>
+                    <div id="top-line" className="line" />
+                    <div id="middle-line" className="line" />
+                    <div id="bottom-line" className="line" />
+                </div>
                 {
                     this.state.showMenu ?
                         (

@@ -38,7 +38,6 @@
     border-style: solid;
     border-width: 1px;
     background-color: $basic-background;
-    top: 48px;
     left: 0px;
     padding: 4px 0px;
     ul {
@@ -82,15 +81,8 @@
     }
 
   }
-  #button {
-    background: url("../../images/images.png");
-    background-position: center;
-    background-size: cover;
-
-    border-style: solid;
-    border-width: 1px;
-    @include size(60px, 50px);
-    border-radius: 1px;
+  #hamburger {
+    @include size(70px, 60px);
 
     @media (max-width: $phone) {
       display: inline-block;
@@ -98,8 +90,41 @@
     @media (min-width: $phone) {
       display: none;
     }
+    .line{
+      background-color: black;
+      @include size(90%, 7px);
+      margin: 0 auto;
+      display: block;
+      border-radius: 15px
+    }
+    #top-line{
+      margin-top: 15px
+    }
+    #middle-line{
+      margin: 7px auto
+    }
+    #bottom-line{
+
+    }
   }
-  .mobile-open {
-    border-bottom: none !important;
+
+
+  .mobile-open{
+    .line{
+      background-color: black;
+      @include size(90%, 14%);
+      margin: 11% auto;
+      display: block;
+      border-radius: 15px
+    }
+    #top-line{
+
+    }
+    #middle-line{
+
+    }
+    #bottom-line{
+
+    }
   }
 }
