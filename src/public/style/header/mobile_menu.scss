@@ -101,7 +101,15 @@
       margin-top: 15px
     }
     #middle-line{
-      margin: 7px auto
+      margin: 7px auto;
+
+
+      visibility: visible;
+      opacity: 1;
+
+      transition: visibility 0s linear 0.01s, opacity 0.50s linear;
+      transition-delay: 0s;
+
     }
     #bottom-line{
 
@@ -121,7 +129,9 @@
 
     }
     #middle-line{
-
+      visibility: hidden !important;
+      opacity: 0 !important;
+      transition: visibility 0s linear 0.20s, opacity 0.20s linear !important;
     }
     #bottom-line{
 
