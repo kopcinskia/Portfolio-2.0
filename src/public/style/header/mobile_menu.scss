@@ -79,8 +79,9 @@
         }
       }
     }
-
   }
+
+
   #hamburger {
     @include size(70px, 60px);
 
@@ -95,46 +96,54 @@
       @include size(90%, 7px);
       margin: 0 auto;
       display: block;
-      border-radius: 15px
+      border-radius: 15px;
+
+      //animation
+      transition: all 0.3s;
     }
     #top-line{
-      margin-top: 15px
+      //position
+      margin-top: 15px;
     }
     #middle-line{
+      //position
       margin: 7px auto;
 
-
+      //animation
       visibility: visible;
       opacity: 1;
-
       transition: visibility 0s linear 0.01s, opacity 0.50s linear;
       transition-delay: 0s;
-
     }
     #bottom-line{
 
     }
   }
+  .menu-close{
 
+    transition: all 0.4s
+  }
 
-  .mobile-open{
+  .menu-open{
     .line{
       background-color: black;
       @include size(90%, 14%);
       margin: 11% auto;
       display: block;
-      border-radius: 15px
-    }
-    #top-line{
+      border-radius: 15px;
 
     }
+    #top-line{
+      transform: translateY(14px) translateX(0px) rotate(45deg)
+    }
     #middle-line{
+      //animation
       visibility: hidden !important;
       opacity: 0 !important;
       transition: visibility 0s linear 0.20s, opacity 0.20s linear !important;
     }
     #bottom-line{
-
+      transform: translateY(-14px) translateX(0px) rotate(-45deg)
     }
   }
 }
