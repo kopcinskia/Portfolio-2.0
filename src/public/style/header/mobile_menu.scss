@@ -29,7 +29,6 @@
 
 
   #mobile-menu {
-
     box-shadow: 0 0 10px #000;
     width: 50vw;
     height: 90vh;
@@ -81,7 +80,6 @@
     }
   }
 
-
   #hamburger {
     @include size(70px, 60px);
 
@@ -112,19 +110,24 @@
       //animation
       visibility: visible;
       opacity: 1;
-      transition: visibility 0s linear 0.01s, opacity 0.50s linear;
+      transition: all 0.4s ease-in-out, visibility 0s linear 1s, opacity 1s linear, background-color 2s ease-out;
       transition-delay: 0s;
     }
-    #bottom-line{
-
+    &:hover{
+      #middle-line{
+        background-color: $accent-color;
+        transform: scaleY(2)
+      }
     }
-  }
-  .menu-close{
 
-    transition: all 0.4s
   }
 
   .menu-open{
+    &:hover {
+        transition: all 0.4s;
+        transition-delay: 0.3s;
+        transform: rotate(360deg)
+    }
     .line{
       background-color: black;
       @include size(90%, 14%);
@@ -145,5 +148,6 @@
     #bottom-line{
       transform: translateY(-14px) translateX(0px) rotate(-45deg)
     }
+
   }
 }
