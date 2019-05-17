@@ -1,16 +1,20 @@
 import React from 'react';
+import Contact from '../../containers/contianer_contact'
 
-const ContextContainer = (props) => {
+const SectionHandler = (props) => {
 
     //TODO zmień ten warunek bo żal parzeć
         return (
+
+
+
             <div id="selected-section">
-                {!props.section ? <div id="home"></div> /*/!* <Home /> *!/*/ :
-                    props.section.name === 'home' ? <div id="home"></div> /*/!* <Home /> *!/*/ :
-                        props.section.name === 'portfolio' ? <div id="portfolio"></div> /*/!*<Portfolio />*!/*/ :
-                            props.section.name === 'contact' ? <div id="contact"></div> /*/!*<Contact />*!/*/ : null}
+                {!props.section ? <Contact id="contact" />:
+                    props.section.name === 'home' ? <div id="home" />:
+                        props.section.name === 'portfolio' ? <div id="portfolio" />:
+                            props.section.name === 'contact' ? <Contact id="contact" />: null}
             </div>
             );
 };
 
-export default ContextContainer;
+export default SectionHandler;

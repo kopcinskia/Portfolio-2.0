@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ContextContainer from '../components/sections/selected_section'
+import SectionHandler from '../components/sections/selected_section'
 
 function mapStateToProps(state) {
     return {
@@ -8,4 +8,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(ContextContainer);
+export default connect(mapStateToProps)(SectionHandler);
