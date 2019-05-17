@@ -6,14 +6,11 @@ import App from './public/js/app';
 import allReducers from "./public/js/reducers/index";
 require('./public/style/main.scss');
 
-//TODO podziel html na komponenty reaktowe
-//TODO sprawdź co tam się wyswietla
 //TODO formularz kontaktowy
 //TODO re render komp reaktowych
-//TODO css automatycznie pojawiające się po re remderze
 //TODO i18n tłumaczenia
 //TODO zdjecia załaduj
-//TODO podłub w portfolio sam slaider to tak biednie
+//TODO sprawdź ciekawe slaidery
 
 const store = createStore(allReducers);
 

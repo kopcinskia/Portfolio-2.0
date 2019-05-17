@@ -3,11 +3,7 @@ import Contact from '../../containers/contianer_contact'
 
 const SectionHandler = (props) => {
 
-    //TODO zmień ten warunek bo żal parzeć
         return (
-
-
-
             <div id="selected-section">
                 {!props.section ? <Contact id="contact" />:
                     props.section.name === 'home' ? <div id="home" />:

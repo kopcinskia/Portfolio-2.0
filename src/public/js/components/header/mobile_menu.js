@@ -20,7 +20,6 @@ class MobileMenu extends Component {
         })
     };
 
-//TODO Animacje i settimeout  add out animate and configure timegit co
     handleCloseMenu = (event) => {
         if (!this.dropdownMenu.contains(event.target)) {
             this.setState({slideOff: 'slide-off'});
