@@ -118,10 +118,14 @@ $desktop: 1280px;
     -webkit-border-radius: $radius;
 }
 
-// podstawowe przejscie 0.4s
+// podstawowe przejscie
 %basic-transition {
     transition: all 0.4s ease-in-out;
 }
+%long-transition{
+    transition: all 1.5s ease-in-out;
+}
+
 
 // Zmienne przjscie
 @mixin variable-transition($length){

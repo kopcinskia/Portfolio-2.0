@@ -37,30 +37,46 @@
   height: 80%;
   margin: 0px auto;
   background-color: rgba(0, 0, 90, 0.2);
+  @extend %long-transition;
 
-  transition: all 1.5s;
+  .textarea-group{
+    display: table;
+  }
 
-  input{
+  .form-group {
+    display: inline-table;
+    width: 50%;
+    padding: 1vw;
+  }
+
+  textarea, input {
     //font
     font-size: 20px;
     color: white;
     font-weight: 100;
-
     //input style
-    padding: 5px;
+    padding: 10px;
     border: none;
     border-radius: 15px;
     border-bottom: 3px solid $basic-border-color;
     background-color: rgba(0, 0, 0, 0.4);
+    //animation
+    @extend %long-transition
+  }
 
-    transition: all 1s;
+  input{
+    width: 20vw;
+  }
+  textarea{
+    width: 46vw;
   }
 
   &:hover, &:focus{
 
     border: solid $accent_color;
-    input{
+    textarea, input{
       border-bottom: 3px solid $accent-color;
     }
+
   }
 }
