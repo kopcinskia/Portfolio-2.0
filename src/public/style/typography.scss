@@ -9,7 +9,6 @@ $paragraph-margin: 0 0 15px;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: $header-margin-bottom;
-  color: $header-color;
   font-weight: 400;
 }
 
@@ -23,7 +22,13 @@ body {
   font-family: $font-family-primary;
   color: $basic-text-color;
 }
+h1 {
+  @include header-mixin(56px, 28px);
+  @media ($desktop) {
+    @include header-mixin(31px, 21px);
+  }
 
+}
 h2 {
   @include header-mixin(36px, 18px);
   @media ($desktop) {

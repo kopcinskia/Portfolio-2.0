@@ -13,7 +13,7 @@ class ParallaxContainer extends Component {
         return (<section className="parallax">
                 <div className={class_custom_name}>
                     <div className="text_area">
-                        <p>{this.props.some_text}</p>
+                        <h1>{this.props.some_text}</h1>
                     </div>
                 </div>
             </section>

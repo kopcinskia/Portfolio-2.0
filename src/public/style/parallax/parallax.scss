@@ -12,10 +12,18 @@
   height: 500px;
 
   .text_area {
+    position: sticky;
+    position: -webkit-sticky;
 
-    p{
-
-    }
+    background: $transparent;
+    width: 30vw;
+    height: 100px;
+    top:250px;
+    margin: 0 auto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
   }
 
   .fixed-bg {
