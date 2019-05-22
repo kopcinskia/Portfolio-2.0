@@ -3,11 +3,13 @@ import MobileMenu from './mobile_menu'
 import MenuContent from '../../containers/container_menu_content'
 import '../../../style/main.scss';
 
-const NavTop = () => {
+const NavTop = (props) => {
     return <header>
         <nav>
             <div className="container">
-                <div className="navbar">
+                <div className={
+                    props.activeNavBarBool.bool ? 'navbar' : 'navbar ' + props.activeNavBarBool.className
+                }>
 
                     <div className="nav-logo">
                         <a href="#">

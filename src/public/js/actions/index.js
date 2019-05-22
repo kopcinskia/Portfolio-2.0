@@ -4,3 +4,10 @@ export const selectSection = (section) => {
         payload: section
     }
 };
+
+export const activeNavbar = (bool) => {
+    return {
+        type: "ACTIVE_NAV",
+        bool: bool
+    }
+};

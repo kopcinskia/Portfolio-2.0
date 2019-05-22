@@ -1,11 +1,19 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import {activeNavbar} from '../actions/index';
 import ContactSection from '../components/sections/contact/contact'
+import {bindActionCreators} from 'redux';
 
-function mapStateToProps(state) {
+
+function mapState(state) {
     return {
-        // section: state.activeSection
+        activeNavBarBool: state.activeNavBarBool
     };
 }
 
-export default connect(mapStateToProps)(ContactSection);
+function mapDispatch(dispatch){
+    return bindActionCreators({
+        activeNavbar: activeNavbar,
+    }, dispatch)
+}
+
+export default connect(mapState ,mapDispatch)(ContactSection);

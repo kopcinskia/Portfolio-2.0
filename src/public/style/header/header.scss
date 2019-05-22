@@ -8,19 +8,19 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  opacity: 0.7;
-  @extend %basic-transition;
-  &:hover {
-    opacity: 0.95;
-  }
+
   background: $basic-background;
   border-bottom: 1px solid $basic-border-color;
   box-shadow: 0 0 1px $basic-border-color;
-  opacity: 80%;
+  .active {
+    @extend %basic-transition;
+    height: 100px!important;
+    margin: 0 50px!important;
+  }
   .navbar {
-
+    @extend %basic-transition;
     margin: 0 100px;
-    height: 100px;
+    height: 90px;
     @media (max-width: $tablet) {
       margin: 0 30px;
     }

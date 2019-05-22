@@ -4,6 +4,7 @@ export default function (state=null, action) {
         case "DISPLAY_SELECTED_SECTION":
             return action.payload;
             break;
+
     }
     return state;
 }
