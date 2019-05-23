@@ -3,34 +3,72 @@
   background: url('../../images/contact.jpg') no-repeat;
   background-size: cover;
 
-  #contact-content{
+  #contact-wrapper{
     @extend %context_height;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding-top: 10vh;
+    display: grid;
+    grid-gap: 5px;
+    width: 100vw;
+    justify-content: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
   }
 }
 
 #contact-form{
-  border-radius: 50px;
+  display: grid;
+  font-size: 21px;
+  border-radius: 30px;
   border: 3px solid $basic-border-color;
   position: inherit;
-  padding: 10vh;
-  width: 60vw;
-  height: 80%;
-  margin: 0px auto;
-  background-color: rgba(0, 0, 90, 0.2);
+
+  justify-content: center;
+  grid-column: 2 / span 4 ;
+  grid-row: 2 / span 4;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+
+  background-color: rgba(0, 0, 0, 0.3);
   @extend %long-transition;
 
-  .textarea-group{
-    display: table;
-  }
 
   .form-group {
-    display: inline-table;
-    width: 50%;
-    padding: 1vw;
+    display: grid;
+    padding: 1vh 20px;
+    grid-template-rows: repeat(2, 1fr);
+
+
+    label{
+      grid-row: 1
+    }
+
+    input, textarea{
+      padding: 5px;
+      font-size: 25px;
+      height: 100%;
+      grid-row: 2
+    }
   }
+
+  .cantact-heading {
+    padding-top: 20px;
+    text-align: center;
+    grid-column: 1 / span 6 ;
+    grid-row: 1
+  }
+  .name{
+    grid-column: 1 / span 3 ;
+    grid-row: 2
+  }
+  .email{
+    grid-column: 4 / span 6 ;
+    grid-row: 2
+  }
+  .mail-content{
+    grid-column: 2 / span 4 ;
+    grid-row: 3 / span 2
+  }
+
 
   textarea, input {
     //font
@@ -38,26 +76,21 @@
     color: white;
     font-weight: 100;
     //input style
-    padding: 10px;
+    display: flex;
     border: none;
     border-radius: 15px;
     border-bottom: 3px solid $basic-border-color;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(90,90,90,0.2);
+    width: 100%;
     //animation
-    @extend %long-transition
-  }
-
-  input{
-    width: 20vw;
-  }
-  textarea{
-    width: 46vw;
+    @extend %long-transition;
   }
 
   &:hover, &:focus{
 
     border: solid $accent_color;
     textarea, input{
+      background-color: $accent-color-transparent;
       border-bottom: 3px solid $accent-color;
     }
 

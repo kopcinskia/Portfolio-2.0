@@ -30,6 +30,7 @@ h1 {
 
 }
 h2 {
+  color: $basic-text-color;
   @include header-mixin(36px, 18px);
   @media ($desktop) {
     @include header-mixin(28px, 18px);

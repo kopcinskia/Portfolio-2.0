@@ -20,17 +20,18 @@ class ContactSection extends Component {
             <section id="contact">
                 <Waypoint onEnter={this._handleWaypointEnter}
                           onLeave={this._handleWaypointLeave}>
-                    <div id="contact-content">
+                    <div id="contact-wrapper">
                         <form id="contact-form" action="">
-                            <div className="form-group">
+                            <h2 className="cantact-heading">Contact</h2>
+                            <div className="form-group name">
                                 <label htmlFor="name">Name: </label>
                                 <input id="name" type="text" placeholder="name"/>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group email">
                                 <label htmlFor="email">E-mail: </label>
                                 <input id="email" type="text" placeholder="email"/>
                             </div>
-                            <div className="textarea-group">
+                            <div className="form-group mail-content">
                                 <label htmlFor="mail_content">Content: </label>
                                 <textarea id="mail_content" placeholder="content"/>
                             </div>
