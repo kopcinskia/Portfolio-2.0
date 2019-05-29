@@ -25,6 +25,8 @@ module.exports = {
             }]
         },
         {
+            //TODO dodaj loadery do index file & css reszta jest w miarę
+          //TODO po zmianie ścieżki w plikach scss można usunąć folder sr z loadera zdjęć
             test: /\.jpe?g$|\.gif$|\.png$/i,
             loader: "file-loader?name=sr/images/[name].[ext]"
         },
