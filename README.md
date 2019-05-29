@@ -10,5 +10,7 @@ open terminal:
 $ git clone https://github.com/kopcinskia/Portfolio-2.0.git
 $ cd Portfolio-2.0
 $ npm install
+$ npm run-script build
+$ sass ./src/public/style/main.scss ./dist/css/style.css
 $ npm start
 ```

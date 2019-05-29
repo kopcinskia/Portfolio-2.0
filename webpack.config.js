@@ -26,7 +26,7 @@ module.exports = {
         },
         {
             test: /\.jpe?g$|\.gif$|\.png$/i,
-            loader: "file-loader?name=src/images/[name].[ext]"
+            loader: "file-loader?name=sr/images/[name].[ext]"
         },
         {
             test: /\.jsx?$/,

@@ -6,6 +6,7 @@ import App from './public/js/app';
 import allReducers from "./public/js/reducers/index";
 require('./public/style/main.scss');
 
+//TODO README po wykonaniu instrukcji brakuje index.html in dist
 //TODO formularz kontaktowy
 //TODO re render komp reaktowych
 //TODO i18n tłumaczenia
